@@ -6,68 +6,61 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:56:51 by ebennace          #+#    #+#             */
-/*   Updated: 2022/05/23 18:25:40 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:46:30 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "pipex.h"
 
-// int found_function(char *command)
-// {
-    
-// }
 
-char *start_with(char *str, char *start)
-{
-    int i;
-    char *result;
 
-    result = ft_strnstr(str, start, ft_strlen(str));
-    // printf("%s\n",result);
-    if (result != str)
-        return (NULL);
-    return (result);
-    
-}
-int main(int argc, char **argv, char **env)
-{
-    find_check_exe(argc, argv, env);
-}
-
-int find_check_exe(int argc, char **argv, char **env)
+void find_check_exe(int argc, char **argv, char **env)
 {
     char **arguments;
     int i;
     char *result;
-    char **path;
     int fd;
     char *path_bin;
+    t_command *command;
+    t_path *path;
 
-    i = -1;
-    arguments = ft_split(argv[1], ' ');
-    while (env[++i])
-        if (start_with(env[i], "PATH=") != NULL)
-            result = start_with(env[i], "PATH=");
-    // printf("%s\n", result);
-    path = ft_split(&result[5], ':');
-    int y = -1;
-    while (path[++y])
-    {
-        // printf("%s\n", path[y]);
-        path_bin = ft_strjoin(path[y], "/ls");
-        fd = access(path_bin, X_OK & F_OK);
+    command = init_command();
+    path = init_path();
+
+    
+    recover_command(command, argv);
+    // printf("command -> %s %s\n", command->bin, command->flags);
+
+    recover_path(path, env);
+    // printf("ALL_PATH ===> %s\n", path->all_path);
+
+    create_and_test_path(path, command);
+
+    
+    exec_command(path, command);
+    // execv(path->path_bin, &command->flags);
+    // int y = -1;
+    // while (path->list_of_path[++y])
+    //     printf("LIST_PATH ===> %s\n", path->list_of_path[y]);
+    
+    // while (path[++y])
+    // {
+    //     // printf("%s\n", path[y]);
+    //     path_bin = ft_strjoin(path[y], command->bin);
+    //     fd = access(path_bin, X_OK & F_OK);
+    //     printf("%s --> fd %d\n", path_bin, fd);
         
-        if (fd == 0)
-        {
-            printf("%s fd -> %d\n", path_bin, fd);
-            execv(path_bin, argv);
-        }
-           
-        // fd = access("ls", R_OK & W_OK & X_OK & F_OK);
-        // printf("%d\n",fd)
-    }
-    
-    
-    
-    
+    //     if (fd == 0)
+    //     {
+            
+    //         printf("path -> %s\n", path_bin);
+    //         execv(path_bin, &flags);
+    //     }
+    // }
+}
+
+int main(int argc, char **argv, char **env)
+{
+    find_check_exe(argc, argv, env);
+    return (0);
 }

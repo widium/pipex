@@ -1,0 +1,9 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/widium/Programming/42_cursus/pipex'
+clang -c  main.c -o main.o
+ 
+clang -c  recover.c -o recover.o
+make -C libft
+clang main.o init.o recover.o  libft/libft.a -o pipex		
+make: Leaving directory '/home/widium/Programming/42_cursus/pipex'
+ 
