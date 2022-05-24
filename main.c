@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:56:51 by ebennace          #+#    #+#             */
-/*   Updated: 2022/05/24 11:46:30 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:20:02 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void find_check_exe(int argc, char **argv, char **env)
     recover_path(path, env);
     // printf("ALL_PATH ===> %s\n", path->all_path);
 
-    create_and_test_path(path, command);
+    create_command(path, command);
 
     
-    exec_command(path, command);
+    exec_command(command);
     // execv(path->path_bin, &command->flags);
     // int y = -1;
     // while (path->list_of_path[++y])

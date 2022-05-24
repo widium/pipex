@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 10:54:50 by ebennace          #+#    #+#             */
-/*   Updated: 2022/05/24 11:52:25 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:17:14 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_command   *init_command(void)
 		return (NULL);
 	command->bin = NULL;
     command->flags = NULL;
-    command->command = NULL;
+    command->command = malloc(sizeof(char *) * 2);
 	return (command);
 }
 

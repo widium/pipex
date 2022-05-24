@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:40:59 by ebennace          #+#    #+#             */
-/*   Updated: 2022/05/24 12:01:43 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:19:24 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void recover_path(t_path *path, char **env)
     path->list_of_path = ft_split(&path->all_path[5], ':');
 }
 
-void create_and_test_path(t_path *path, t_command *command)
+void create_command(t_path *path, t_command *command)
 {
     int y;
     int fd;
@@ -58,18 +58,21 @@ void create_and_test_path(t_path *path, t_command *command)
         path->path_bin = ft_strjoin(path->list_of_path[y], command->bin);
         fd = access(path->path_bin, X_OK & F_OK);
         if (fd == 0)
-            return ;
+        {
+            command->command[0] = path->path_bin;
+            command->command[1] = command->flags;
+            return;
+        }
     }
     // printf("LIST_PATH ===> %s\n", path->list_of_path[y]);
-    
 }
 
-void exec_command(t_path *path, t_command *command)
+void exec_command(t_command *command)
 {
-    printf("command -> %s \n", path->path_bin);
-    printf("flags -> %s\n",command->flags);
-    command->command = malloc(sizeof(char *) * 2);
-    command->command[0] = path->path_bin;
-    command->command[1] = command->flags;
-    execv(path->path_bin, command->command);
+    printf("command -> %s \n", command->command[0]);
+    printf("flags -> %s\n",command->command[1]);
+    // command->command = malloc(sizeof(char *) * 2);
+    // command->command[0] = path->path_bin;
+    // command->command[1] = command->flags;
+    execv(command->command[0], command->command);
 }
