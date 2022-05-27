@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:40:59 by ebennace          #+#    #+#             */
-/*   Updated: 2022/05/25 11:32:38 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/05/27 18:36:25 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,9 @@ int test_command(t_env *env, t_command *command)
 
 void exec_command(t_command *command)
 {
-    printf("command -> %s \n", command->complete[0]);
-    printf("flags -> %s\n",command->complete[1]);
-    // command->command = malloc(sizeof(char *) * 2);
-    // command->command[0] = path->path_bin;
-    // command->command[1] = command->flags;
+    // printf("command -> %s \n", command->complete[0]);
+    // printf("flags -> %s\n",command->complete[1]);
+    
     execv(command->complete[0], command->complete);
+    
 }

@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 10:52:36 by ebennace          #+#    #+#              #
-#    Updated: 2022/05/25 14:54:10 by ebennace         ###   ########.fr        #
+#    Updated: 2022/05/26 16:14:37 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRCS		= 	main.c \
 				init.c \
 				recover.c \
 				parsing.c \
+				test.c \
 
 
 

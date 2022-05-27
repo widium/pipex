@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:28:52 by ebennace          #+#    #+#             */
-/*   Updated: 2022/05/25 14:56:20 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/05/27 18:52:53 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int test_argv(t_env *env)
     int result_2;
     int result_3;
     
-    env->file->fd_in = open(env->file->in, O_RDONLY);
-    env->file->fd_out = open(env->file->out, O_CREAT | O_WRONLY, 664);
+    env->file->fd_in = open(env->file->in, O_CREAT | O_RDONLY , 0777);
+    env->file->fd_out = open(env->file->out, O_CREAT | O_WRONLY | O_TRUNC, 0777);
     
     env->in_command->complete = ft_split(env->in_command->brut, ' ');
     env->out_command->complete = ft_split(env->out_command->brut, ' ');
