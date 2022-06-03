@@ -1,1 +1,24 @@
+total 100
+drwxr-xr-x 4 widium widium  4096 30 mai   14:21 .
+drwxr-xr-x 8 widium widium  4096 23 mai   09:48 ..
+drwxr-xr-x 8 widium widium  4096 30 mai   13:48 .git
+-rwxr-xr-x 1 widium widium     1 27 mai   18:55 in_file
+-rw-r--r-- 1 widium widium  1875 25 mai   11:18 init.c
+-rw-r--r-- 1 widium widium  2008 30 mai   13:48 init.o
+lrwxrwxrwx 1 widium widium    40 23 mai   09:48 libft -> /home/widium/Programming/42_cursus/libft
+-rw-r--r-- 1 widium widium  1945 30 mai   14:24 main.c
+-rw-r--r-- 1 widium widium  2608 30 mai   14:21 main.o
+-rw-r--r-- 1 widium widium  1520 26 mai   16:14 Makefile
+-rwxr-xr-x 1 widium widium     0 30 mai   14:22 out_file
+-rw-r--r-- 1 widium widium  3057 30 mai   14:25 parsing.c
+-rw-r--r-- 1 widium widium  3728 30 mai   14:16 parsing.o
+-rwxr-xr-x 1 widium widium 21768 30 mai   14:21 pipex
+-rw-r--r-- 1 widium widium  2020 30 mai   14:08 pipex.h
+-rw-r--r-- 1 widium widium     7 23 mai   09:48 README.md
+-rw-r--r-- 1 widium widium  2431 30 mai   14:20 recover.c
+-rw-r--r-- 1 widium widium  2680 30 mai   14:20 recover.o
+-rw-r--r-- 1 widium widium   314 27 mai   18:18 test.c
+-rw-r--r-- 1 widium widium   656 30 mai   13:48 test.o
+drwxr-xr-x 2 widium widium  4096 24 mai   10:52 .vscode
+-rwxrwxrwx 1 widium widium    11 27 mai   16:55 zebi.txt
 

@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 10:52:36 by ebennace          #+#    #+#              #
-#    Updated: 2022/05/26 16:14:37 by ebennace         ###   ########.fr        #
+#    Updated: 2022/06/03 14:00:06 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,16 +17,19 @@ SRCS		= 	main.c \
 				recover.c \
 				parsing.c \
 				test.c \
+				command.c \
+				pipe.c \
 
 
 
 OBJS			= $(SRCS:.c=.o)
-CC				= clang
+CC				= gcc
 # FLAGS 		= -Wall -Werror -Wextra
-SANITIZE		= -g3 -fsanitize=address
+FLAGS			= -g3 
+SANITIZE 		= -fsanitize=address
 
 %.o : %.c
-			$(CC) -c $(CFLAGS) $< -o $@
+			$(CC) -c $(FLAGS) $< -o $@
 	
 $(NAME) : 		$(OBJS)
 				make -C libft
@@ -43,8 +46,8 @@ fclean : clean
 				/bin/rm -rf $(NAME)
 
 debug : 		$(OBJS)
-				$(CC) $(OBJS) $(FLAGS) $(SANITIZE) libft/libft.a  -o $(NAME)
-				# lldb ./$(NAME)
+				$(CC) $(OBJS) $(FLAGS) $(SANITIZE) -g3 libft/libft.a  -o $(NAME)
+				gdb $(NAME)
 
 
 re : fclean all

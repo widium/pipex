@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:56:56 by ebennace          #+#    #+#             */
-/*   Updated: 2022/05/25 14:56:59 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/03 15:02:07 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "libft/libft.h"
-
 
 typedef struct s_file
 {
@@ -37,6 +36,8 @@ typedef struct s_command
     char *bin;
     char *flags;
     char **complete;
+    int index;
+    struct s_command *next_cmd;
 }       t_command;
 
 typedef struct s_path
@@ -49,10 +50,12 @@ typedef struct s_path
 
 typedef struct s_env
 {
+    int nbr_cmd;
+    int fd[2];
+    int fd_next[2];
     t_file *file;
-    t_command *in_command;
-    t_command *out_command;
     t_path *path;
+    t_command *first_cmd;
 }       t_env;
 
 t_command   *init_command(void);
@@ -62,13 +65,25 @@ t_env *init_env(void);
 
 
 
-void create_command(t_command *command, char **argv);
+// void create_command(t_command *command, char **argv);
 void recover_path(t_env *env, char **env_path);
-int test_command(t_env *env, t_command *command);
+int create_command(t_env *env, t_command *command);
 void exec_command(t_command *command);
+void connect_cmd(t_command *first_command, t_command *next_command);
 
-int parsing_argv(t_env *env, char **argv, int argc);
+void count_cmd(t_env *env);
+void print_cmd(t_command *cmd);
+void print_all_cmd(t_command *cmd);
+void print_table(t_env *env);
+
+void parsing_argv(t_env *env, char **argv, int argc);
 int test_argv(t_env *env);
 int manage_parsing(t_env *env, char **argv, int argc, char **env_path);
+void add_input(t_command *command, char *input);
+void setup_cmd(t_env *env, t_command *cmd, char *argv, int index);
 
+void pipex(t_env *env, t_command *cmd, t_command *next_cmd);
+
+
+void manage_pipe(t_env *env);
 #endif

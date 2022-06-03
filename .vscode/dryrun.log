@@ -1,9 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/widium/Programming/42_cursus/pipex'
-clang -c  parsing.c -o parsing.o
- 
-clang -c  test.c -o test.o
-make -C libft
-clang main.o init.o recover.o parsing.o test.o  libft/libft.a -o pipex		
+make: 'pipex' is up to date.
 make: Leaving directory '/home/widium/Programming/42_cursus/pipex'
  

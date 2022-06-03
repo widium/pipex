@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 10:54:50 by ebennace          #+#    #+#             */
-/*   Updated: 2022/05/25 11:18:59 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/03 14:33:49 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ t_command   *init_command(void)
 	command->bin = NULL;
     command->flags = NULL;
     command->complete = malloc(sizeof(char *) * 2);
+	command->next_cmd = NULL;
+	command->index = 0;
 	return (command);
 }
 
@@ -61,9 +63,9 @@ t_env *init_env(void)
 	if (!env)
 		return (NULL);
 	env->file = init_file();
-    env->in_command = init_command();
-	env->out_command = init_command();
+    env->first_cmd = init_command();
     env->path = init_path();
+	env->nbr_cmd = 0;
 	return (env);
 }
 
