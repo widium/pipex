@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jun  3 14:00:45 2022
+# Make data base, printed on Sat Jun  4 08:57:50 2022
 
 # Variables
 
@@ -19,9 +19,9 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/widium/.gtkrc:/home/widium/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-818233c7-b731-4020-921d-96e35de9c686.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c7a75915-56d1-48c9-96d5-927bcdf2c598.sock
 # environment
-KONSOLE_DBUS_SERVICE = :1.1771
+KONSOLE_DBUS_SERVICE = :1.10616
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -43,7 +43,7 @@ GTK3_MODULES = xapp-gtk3-module
 # environment
 GDK_DPI_SCALE = 0.5
 # environment
-KONSOLE_VERSION = 220400
+KONSOLE_VERSION = 220401
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -277,11 +277,12 @@ _P9K_TTY = /dev/pts/1
 # environment
 VSCODE_CLI = 1
 # environment
+ 
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 LS_OPTIONS = --color=auto
 # environment
-SHELL_SESSION_ID = 1455ead58d7c4563b9f36ab7c3f7d044
+SHELL_SESSION_ID = ef048d4c06cf47c08343084fbfc626a8
 # environment
 KDE_SESSION_VERSION = 5
 # default
@@ -297,7 +298,7 @@ PKGFILE_PROMPT_INSTALL_MISSING = 1
 # environment
 LC_IDENTIFICATION = fr_FR.UTF-8
 # variable set hash-table stats:
-# Load=143/1024=14%, Rehash=0, Collisions=20/179=11%
+# Load=143/1024=14%, Rehash=0, Collisions=20/184=11%
 
 # Pattern-specific Variable Values
 
@@ -305,10 +306,9 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 
 # Directories
 
- 
-# . (device 66306, inode 5244610): 26 files, no impossibilities.
+# . (device 66306, inode 5244610): 18 files, no impossibilities.
 
-# 26 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -319,13 +319,6 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 
 # 1 implicit rules, 0 (0.0%) terminal.
 # Files
-
-# Not a target:
-pipe.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-03 12:57:47.800000169
-#  File has been updated.
-#  Successfully updated.
 
 debug: main.o init.o recover.o parsing.o test.o command.o pipe.o
 #  Implicit rule search has not been done.
@@ -344,19 +337,14 @@ Makefile:
 
 pipex: main.o init.o recover.o parsing.o test.o command.o pipe.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-03 14:00:01.620001111
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 #  recipe to execute (from 'Makefile', line 35):
 				make -C libft
 				$(CC) $(OBJS) $(FLAGS) libft/libft.a -o $(NAME)		
-
-# Not a target:
-recover.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-31 19:19:09.589999041
-#  File has been updated.
-#  Successfully updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
@@ -367,38 +355,23 @@ clean:
 				make clean -C libft
 				/bin/rm -rf $(OBJS)
 
-# Not a target:
-test.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-27 18:18:26.243333347
-#  File has been updated.
-#  Successfully updated.
-
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
 
-pipe.o: pipe.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'pipe'
-#  Last modified 2022-06-03 14:00:00.780001111
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 32):
-			$(CC) -c $(FLAGS) $< -o $@
-	
+# Not a target:
+pipe.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-init.o: init.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'init'
-#  Last modified 2022-06-03 14:00:00.64000111
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 32):
-			$(CC) -c $(FLAGS) $< -o $@
-	
+# Not a target:
+init.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -412,7 +385,9 @@ all: pipex
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
@@ -426,63 +401,55 @@ fclean: clean
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-03 13:58:54.586667761
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-init.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-03 12:58:09.636666842
+#  Last modified 2022-06-03 18:54:47.476666993
 #  File has been updated.
 #  Successfully updated.
 
 main.o: main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-03 14:00:00.610001111
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 32):
-			$(CC) -c $(FLAGS) $< -o $@
-	
-
-command.o: command.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'command'
-#  Last modified 2022-06-03 14:00:00.756667777
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 32):
-			$(CC) -c $(FLAGS) $< -o $@
-	
-
-test.o: test.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'test'
-#  Last modified 2022-06-03 14:00:00.720001111
-#  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := main.o
+# automatic
+# * := main
+# automatic
+# < := main.c
+# automatic
+# + := main.c
+# automatic
+# % := 
+# automatic
+# ^ := main.c
+# automatic
+# ? := main.c
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
 #  recipe to execute (from 'Makefile', line 32):
 			$(CC) -c $(FLAGS) $< -o $@
 	
 
 # Not a target:
-parsing.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-03 13:02:43.656666924
-#  File has been updated.
-#  Successfully updated.
+command.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-parsing.o: parsing.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'parsing'
-#  Last modified 2022-06-03 14:00:00.693334444
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 32):
-			$(CC) -c $(FLAGS) $< -o $@
-	
+# Not a target:
+test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+parsing.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
@@ -490,36 +457,25 @@ parsing.o: parsing.c
 #  File has not been updated.
 
 # Not a target:
-command.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-03 12:57:58.063333505
-#  File has been updated.
-#  Successfully updated.
-
-recover.o: recover.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'recover'
-#  Last modified 2022-06-03 14:00:00.666667777
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 32):
-			$(CC) -c $(FLAGS) $< -o $@
-	
+recover.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=24/1024=2%, Rehash=0, Collisions=0/78=0%
+# Load=18/1024=2%, Rehash=0, Collisions=0/54=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 45 / storage = 335 B / avg = 7 B
-# current buf: size = 8162 B / used = 335 B / count = 45 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 39 / storage = 296 B / avg = 7 B
+# current buf: size = 8162 B / used = 296 B / count = 39 / avg = 7 B
 
-# strcache performance: lookups = 94 / hit rate = 52%
+# strcache performance: lookups = 68 / hit rate = 42%
 # hash-table stats:
-# Load=45/8192=1%, Rehash=0, Collisions=0/94=0%
-# Finished Make data base on Fri Jun  3 14:00:45 2022
+# Load=39/8192=0%, Rehash=0, Collisions=0/68=0%
+# Finished Make data base on Sat Jun  4 08:57:50 2022
 
  

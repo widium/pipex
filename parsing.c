@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:28:52 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/03 18:30:50 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/04 13:09:37 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void parsing_argv(t_env *env, char **argv, int argc)
     t_command *next_cmd;
 
     i = 2;
-    index = 0;
+    index = 1;
     
     env->file->in = argv[1];
     env->file->out = argv[argc - 1];

@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:56:56 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/03 15:02:07 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/04 12:56:11 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int manage_parsing(t_env *env, char **argv, int argc, char **env_path);
 void add_input(t_command *command, char *input);
 void setup_cmd(t_env *env, t_command *cmd, char *argv, int index);
 
-void pipex(t_env *env, t_command *cmd, t_command *next_cmd);
+void pipex(t_env *env, t_command *cmd, int *fd, int *fd_next);
 
 
 void manage_pipe(t_env *env);
