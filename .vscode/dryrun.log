@@ -1,10 +1,13 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/widium/Programming/42_cursus/pipex'
-clang -c -g3  pipe.c -o pipe.o
+clang -c -g3  main.c -o main.o
  
+clang -c -g3  command.c -o command.o
+clang -c -g3  pipe.c -o pipe.o
 clang -c -g3  utils.c -o utils.o
-clang -c -g3  redirection.c -o redirection.o
+clang -c -g3  all.c -o all.o
+clang -c -g3  verbose.c -o verbose.o
 make -C libft
-clang main.o init.o recover.o parsing.o test.o command.o pipe.o utils.o redirection.o -g3  libft/libft.a -o pipex		
+clang main.o init.o recover.o parsing.o test.o command.o pipe.o utils.o redirection.o all.o verbose.o -g3  libft/libft.a -o pipex		
 make: Leaving directory '/home/widium/Programming/42_cursus/pipex'
  

@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   all.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 09:56:51 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/06 14:51:58 by ebennace         ###   ########.fr       */
+/*   Created: 2022/06/06 13:52:55 by ebennace          #+#    #+#             */
+/*   Updated: 2022/06/06 14:53:09 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "pipex.h"
+#include "pipex.h"
 
-int main (int argc, char **argv, char **env_path)
+int terminal(char **argv, int argc, char **env_path, int verbose)
 {
-    terminal(argv, argc, env_path, 0);    
+    t_env *env;
+    t_command *cmd;
+    
+    env = init_env();
+    if (!(manage_parsing(env, argv, argc, env_path)))
+    {
+        print_error();
+        return (0);
+    }
+    multi_pipex(env);
+    if (verbose == 1)
+    {
+        cmd = env->first_cmd;
+        print_all_cmd(env, cmd);
+    }
+    return (1);
+        
 }
-

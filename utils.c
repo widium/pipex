@@ -6,30 +6,11 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 10:32:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/06 10:47:29 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/06 13:56:12 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "pipex.h"
-
-void print_cmd(t_command *cmd)
-{
-    printf("==================\n");
-	printf("cmd complete -> %s %s\n", cmd->complete[0], cmd->complete[1]);
-	printf("bin -> %s\n", cmd->bin);
-	printf("flags -> %s\n", cmd->flags);
-    printf("Index -> (%d)\n", cmd->index);
-    printf("==================\n");
-}
-
-void print_all_cmd(t_command *cmd)
-{
-    while (cmd->next_cmd)
-    {
-        print_cmd(cmd);
-        cmd = cmd->next_cmd;
-    }
-}
 
 int is_first_cmd(t_command *cmd)
 {

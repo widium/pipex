@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:36:08 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/06 10:46:26 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/06 14:43:56 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int create_command(t_env *env, t_command *command)
 
 void setup_cmd(t_env *env, t_command *cmd, char *argv, int index)
 {
-	int result;
 	
     cmd->index = index;
 	cmd->brut = argv;
@@ -45,7 +44,7 @@ void setup_cmd(t_env *env, t_command *cmd, char *argv, int index)
 	cmd->bin = cmd->complete[0];
 	cmd->flags = cmd->complete[1];
 	cmd->bin = ft_strjoin("/", cmd->bin);
-	result = create_command(env, cmd);
+	create_command(env, cmd);
 }
 
 void connect_cmd(t_command *first_command, t_command *next_command)
@@ -72,8 +71,8 @@ void count_cmd(t_env *env)
 
 void exec_command(t_command *command)
 {
-    fprintf(stderr,"command -> %s \n", command->complete[0]);
-    fprintf(stderr,"flags -> %s\n",command->complete[1]);
+    // fprintf(stderr,"command -> %s \n", command->complete[0]);
+    // fprintf(stderr,"flags -> %s\n",command->complete[1]);
     
     execv(command->complete[0], command->complete);
     

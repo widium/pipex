@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 10:52:36 by ebennace          #+#    #+#              #
-#    Updated: 2022/06/06 10:34:30 by ebennace         ###   ########.fr        #
+#    Updated: 2022/06/06 13:56:00 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRCS		= 	main.c \
 				pipe.c \
 				utils.c \
 				redirection.c \
+				all.c \
+				verbose.c \
 
 
 
