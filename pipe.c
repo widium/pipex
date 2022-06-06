@@ -6,32 +6,13 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:55:37 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/04 18:12:03 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/06 10:45:03 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "pipex.h"
 
-void manage_pipe(t_env *env)
-{
-    int i;
-    t_command *iter;
-
-    iter = env->first_cmd;
-    i = 0;
-
-    while (iter->next_cmd)
-    {
-        if (iter->next_cmd)
-        {
-            printf("Command -> (%d)\n", i);
-        }
-        iter = iter->next_cmd;
-        i++;
-    }
-}
-
-void pipex(t_env *env, t_command *cmd, int *fd, int *fd_next)
+void pipex(t_env *env, t_command *cmd)
 {
     int id;
 
@@ -41,51 +22,83 @@ void pipex(t_env *env, t_command *cmd, int *fd, int *fd_next)
     if (id == 0)
     {
         printf("Child Process {%d}\n", id);
-        // ====== Si c'est la 1er command === //
-        if (cmd->index == 1)
-        {
-            printf("1er command\n");
-        // ====== Redirection Input -> read in_file === //
-            dup2(env->file->fd_in, STDIN_FILENO);
-        }
-        else
-        {
-        // ====== Redirection Input -> 1e pipe reception === //
-            
-            //si c'est une command impaire
-            if (cmd->index % 2 != 0)
-                dup2(fd_next[0], STDIN_FILENO);
-            else
-                dup2(fd[0], STDIN_FILENO);
-        }
-        if (cmd->index == env->nbr_cmd)
-        {
-            printf("Last command\n");
-        // ====== Redirection Output -> write out_file === //
-            dup2(env->file->fd_out, STDOUT_FILENO);
-        }
-        else 
-        {
-        // ====== Redirection Output -> 1er pipe send === //
-        
-        //si c'est une command impaire
-        if (cmd->index % 2 != 0)
-            dup2(fd[1], STDOUT_FILENO);
-        else
-            dup2(fd_next[1], STDOUT_FILENO);
-        }
-        
-        close(env->file->fd_in);
-        close(env->file->fd_out);
-        close(fd[0]);
-        close(fd[1]);
-        close(fd_next[0]);
-        close(fd_next[1]);    
+        command_redirection(env, cmd);
+        close_all(env);
         exec_command(cmd);
         perror("In command failure : "); 
-        }
+    }
 }
 
+void multi_pipex(t_env *env)
+{
+    t_command *cmd;
+
+    cmd = env->first_cmd;
+    pipe(env->fd);
+    pipe(env->fd_next);
+    
+    while (cmd->next_cmd)
+    {   
+        setup_pipe(env, cmd);      
+        pipex(env, cmd);
+        cmd = cmd->next_cmd;
+    } 
+}
+
+// void pipex(t_env *env, t_command *cmd)
+// {
+//     int id;
+
+//     id = fork();
+    
+//     // wait(id);
+//     if (id == 0)
+//     {
+//         printf("Child Process {%d}\n", id);
+//         // ====== Si c'est la 1er command === //
+//         if (cmd->index == 1)
+//         {
+//             printf("1er command\n");
+//         // ====== Redirection Input -> read in_file === //
+//             dup2(env->file->fd_in, STDIN_FILENO);
+//         }
+//         else
+//         {
+//         // ====== Redirection Input -> 1e pipe reception === //
+            
+//             //si c'est une command impaire
+//             if (cmd->index % 2 != 0)
+//                 dup2(env->fd_next[0], STDIN_FILENO);
+//             else
+//                 dup2(env->fd[0], STDIN_FILENO);
+//         }
+//         if (cmd->index == env->nbr_cmd)
+//         {
+//             printf("Last command\n");
+//         // ====== Redirection Output -> write out_file === //
+//             dup2(env->file->fd_out, STDOUT_FILENO);
+//         }
+//         else 
+//         {
+//         // ====== Redirection Output -> 1er pipe send === //
+        
+//         //si c'est une command impaire
+//         if (cmd->index % 2 != 0)
+//             dup2(env->fd[1], STDOUT_FILENO);
+//         else
+//             dup2(env->fd_next[1], STDOUT_FILENO);
+//         }
+        
+//         close(env->file->fd_in);
+//         close(env->file->fd_out);
+//         close(env->fd[0]);
+//         close(env->fd[1]);
+//         close(env->fd_next[0]);
+//         close(env->fd_next[1]);    
+//         exec_command(cmd);
+//         perror("In command failure : "); 
+//         }
+// }
 // void pipex(t_env *env, t_command *cmd, t_command *next_cmd)
 // {
 //     int id;

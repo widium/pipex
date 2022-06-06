@@ -6,22 +6,11 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:28:52 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/04 13:09:37 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/06 13:44:20 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "pipex.h"
-
-void add_input(t_command *command, char *input)
-{
-    char *input_space;
-    char *flags_input;
-    
-    input_space = ft_strjoin(" ", input);
-    flags_input = ft_strjoin(command->flags, input_space);
-    command->flags = flags_input;
-    command->complete[1] = flags_input;
-}
 
 int manage_parsing(t_env *env, char **argv, int argc, char **env_path)
 {
@@ -29,9 +18,6 @@ int manage_parsing(t_env *env, char **argv, int argc, char **env_path)
     
     recover_path(env, env_path);
     parsing_argv(env, argv, argc);
-    // print_all_cmd(env->first_cmd);
-    // if (!(test_argv(env)))
-    //     return (0);
     return (1);
 }
 
@@ -44,16 +30,20 @@ void parsing_argv(t_env *env, char **argv, int argc)
 
     i = 2;
     index = 1;
-    
-    env->file->in = argv[1];
-    env->file->out = argv[argc - 1];
+    detect_and_open_files(env, argv, argc);
+    create_chained_list(env, argv, argc);
+    count_cmd(env);
+}
 
-    env->file->fd_in = open(env->file->in, O_CREAT | O_RDONLY , 0777);
-    env->file->fd_out = open(env->file->out, O_CREAT | O_WRONLY | O_TRUNC, 0777);
+void create_chained_list(t_env *env, char **argv, int argc)
+{
+    int i;
+    int index;
+    t_command *cmd;
+    t_command *next_cmd;
     
-    
-    // printf("In file -> %s\n", env->file->in);
-    // printf("out file -> %s\n", env->file->out);
+    i = 2;
+    index = 1;
     while (i < argc)
     {
         if (i < 3)
@@ -69,12 +59,11 @@ void parsing_argv(t_env *env, char **argv, int argc)
             connect_cmd(cmd, next_cmd);
             cmd = next_cmd;
         }
-        i++;
-        index++;
-        
+        i++ && index++;
     }
-    count_cmd(env);
 }
+
+
 
 // void create_fd(t_env *env, t_command *cmd)
 // {

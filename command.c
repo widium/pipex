@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:36:08 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/03 14:43:02 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/06 10:46:26 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,25 +55,6 @@ void connect_cmd(t_command *first_command, t_command *next_command)
     first_command->next_cmd = next_command;
 }
 
-void print_cmd(t_command *cmd)
-{
-    printf("==================\n");
-	printf("cmd complete -> %s %s\n", cmd->complete[0], cmd->complete[1]);
-	printf("bin -> %s\n", cmd->bin);
-	printf("flags -> %s\n", cmd->flags);
-    printf("Index -> (%d)\n", cmd->index);
-    printf("==================\n");
-}
-
-void print_all_cmd(t_command *cmd)
-{
-    while (cmd->next_cmd)
-    {
-        print_cmd(cmd);
-        cmd = cmd->next_cmd;
-    }
-}
-
 void count_cmd(t_env *env)
 {
     int i;
@@ -87,4 +68,13 @@ void count_cmd(t_env *env)
         i++;
     }
     env->nbr_cmd = i;
+}
+
+void exec_command(t_command *command)
+{
+    fprintf(stderr,"command -> %s \n", command->complete[0]);
+    fprintf(stderr,"flags -> %s\n",command->complete[1]);
+    
+    execv(command->complete[0], command->complete);
+    
 }

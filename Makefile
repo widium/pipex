@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 10:52:36 by ebennace          #+#    #+#              #
-#    Updated: 2022/06/03 14:00:06 by ebennace         ###   ########.fr        #
+#    Updated: 2022/06/06 10:34:30 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,13 @@ SRCS		= 	main.c \
 				test.c \
 				command.c \
 				pipe.c \
+				utils.c \
+				redirection.c \
 
 
 
 OBJS			= $(SRCS:.c=.o)
-CC				= gcc
+CC				= clang
 # FLAGS 		= -Wall -Werror -Wextra
 FLAGS			= -g3 
 SANITIZE 		= -fsanitize=address
