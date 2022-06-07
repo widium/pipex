@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:55:45 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/06 14:49:24 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/07 16:18:47 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void print_cmd(t_command *cmd)
 void print_all_cmd(t_env *env, t_command *cmd)
 {
     printf("==================\n");
-    printf("Name : %s\n", env->file->in);
-    printf("Fd : [%d]\n", env->file->fd_in);
+    printf("Name : %s\n", env->in_file->name);
+    printf("Fd : [%d]\n", env->in_file->fd);
     printf("==================\n");
     while (cmd->next_cmd)
     {
@@ -34,14 +34,22 @@ void print_all_cmd(t_env *env, t_command *cmd)
         cmd = cmd->next_cmd;
     }
     printf("==================\n");
-    printf("Name : %s\n", env->file->out);
-    printf("Fd : [%d]\n", env->file->fd_out);
+    printf("Name : %s\n", env->out_file->name);
+    printf("Fd : [%d]\n", env->out_file->fd);
     printf("==================\n");
 }
 
 void print_error(void)
 {
     printf("========= Error =========\n");
-    printf("""Example Input : file_in \"cmd_1\" \"cmd_2\" out_file\n""");
+    printf("\nExample Input : \n\nfile_in \"cmd_1\" \"cmd_2\" out_file\n\n");
+    printf("here_doc KEYWORD \"cmd_1\" \"cmd_2\" out_file\n");
+    printf("--------");
+    printf("\nErreur Frequentes :\n\n");
+    printf("- Oublie du in_file\n");
+    printf("- Oublie du out_file\n");
+    printf("- Oublie des \" \" entre les functions\n");
+    printf("- Oublie du here_doc avant KEYWORD\n");
+    printf("- Oublie du KEYWORD apres here_doc\n");
     printf("==================\n");
 }

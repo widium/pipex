@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:40:59 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/06 10:45:59 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/07 16:25:18 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,6 @@ char *start_with(char *str, char *start)
         return (NULL);
     return (result);
     
-}
-
-// void create_command(t_command *command, char **argv)
-// {
-//     command->bin = argv[0];
-//     command->flags = argv[1];
-//     command->bin = ft_strjoin("/", command->bin);
-//     // printf("command -> %s %s\n", command->bin, command->flags);
-// }
-
-void detect_and_open_files(t_env *env, char **argv, int argc)
-{
-    env->file->in = argv[1];
-    env->file->out = argv[argc - 1];
-
-    env->file->fd_in = open(env->file->in, O_CREAT | O_RDONLY , 0777);
-    env->file->fd_out = open(env->file->out, O_CREAT | O_WRONLY | O_TRUNC, 0777);
 }
 
 void recover_path(t_env *env, char **env_path)

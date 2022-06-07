@@ -6,13 +6,14 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 10:52:36 by ebennace          #+#    #+#              #
-#    Updated: 2022/06/06 13:56:00 by ebennace         ###   ########.fr        #
+#    Updated: 2022/06/07 16:24:32 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
 
-SRCS		= 	main.c \
+SRCS		= 	get_next_line/get_next_line.c \
+				main.c \
 				init.c \
 				recover.c \
 				parsing.c \
@@ -23,6 +24,7 @@ SRCS		= 	main.c \
 				redirection.c \
 				all.c \
 				verbose.c \
+				file.c \
 
 
 

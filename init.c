@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 10:54:50 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/03 14:33:49 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/06 16:23:20 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,8 @@ t_file *init_file(void)
 	file = (t_file *)malloc(sizeof(t_file));
 	if (!file)
 		return (NULL);
-	file->in = NULL;
-    file->out = NULL;
-    file->fd_in = 0;
-	file->fd_out = 0;
+	file->name = NULL;
+	file->fd = -1;
 	return (file);
 }
 
@@ -62,10 +60,13 @@ t_env *init_env(void)
 	env = (t_env *)malloc(sizeof(t_env));
 	if (!env)
 		return (NULL);
-	env->file = init_file();
+	env->in_file = init_file();
+	env->out_file = init_file();
+	env->tmp_file = init_file();
     env->first_cmd = init_command();
     env->path = init_path();
 	env->nbr_cmd = 0;
+	env->keyword = NULL;
 	return (env);
 }
 

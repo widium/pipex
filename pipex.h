@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:56:56 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/06 14:49:20 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/07 16:23:46 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,23 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "libft/libft.h"
+# include "get_next_line/get_next_line.h"
+
+// typedef struct s_file
+// {
+//     char *in;
+//     char *out;
+
+//     int fd_in;
+//     int fd_out;
+// }       t_file;
 
 typedef struct s_file
 {
-    char *in;
-    char *out;
-
-    int fd_in;
-    int fd_out;
+    char *name;
+    int fd;
 }       t_file;
+
 
 typedef struct s_command
 {
@@ -53,7 +61,11 @@ typedef struct s_env
     int nbr_cmd;
     int fd[2];
     int fd_next[2];
-    t_file *file;
+    char *keyword;
+    int  start;
+    t_file *in_file;
+    t_file *out_file;
+    t_file *tmp_file;
     t_path *path;
     t_command *first_cmd;
 }       t_env;
@@ -64,12 +76,20 @@ t_file *init_file(void);
 t_env *init_env(void);
 
 
-void detect_and_open_files(t_env *env, char **argv, int argc);
+int detect_in_file_or_keyword(t_env *env, char **argv, int argc);
+void detect_and_create_out_file(t_env *env, char **argv, int argc);
+void here_doc(t_env *env);
+
 void recover_path(t_env *env, char **env_path);
 int create_command(t_env *env, t_command *command);
 void exec_command(t_command *command);
 void connect_cmd(t_command *first_command, t_command *next_command);
 void create_chained_list(t_env *env, char **argv, int argc);
+
+void print_char(char *str);
+int	same_str(char *first, char *second);
+int	str_comp_witout_n(char *first, char *second);
+char *remove_n(char *str);
 
 int is_first_cmd(t_command *cmd);
 int is_last_cmd(t_env *env, t_command *cmd);

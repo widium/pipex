@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:28:52 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/06 14:51:28 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/07 16:25:51 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ void create_chained_list(t_env *env, char **argv, int argc)
     t_command *cmd;
     t_command *next_cmd;
     
-    i = 2;
+    i = env->start;
     index = 1;
     while (i < argc)
     {
-        if (i < 3)
+        if (i < (env->start + 1))
         {
             cmd = init_command();
             setup_cmd(env, cmd, argv[i], index);
@@ -68,10 +68,18 @@ void create_chained_list(t_env *env, char **argv, int argc)
 
 int check_input(t_env *env, char **argv, int argc)
 {
-    if (argc == 1)
+    int result;
+    
+    if (argc <= 3)
         return (0);
-    detect_and_open_files(env, argv, argc);
-    if (env->file->fd_in == -1)
-        return (0);
-    return (1);
+    result = detect_in_file_or_keyword(env, argv, argc);
+    detect_and_create_out_file(env, argv, argc);
+    if (result == 2)
+    {
+        here_doc(env);
+        return (1);
+    }
+    else if (result == 1)
+        return (1);
+    return (0);
 }

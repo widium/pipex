@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 09:56:51 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/07 07:28:15 by ebennace         ###   ########.fr       */
+/*   Created: 2021/12/07 15:03:26 by ebennace          #+#    #+#             */
+/*   Updated: 2022/06/06 16:43:40 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "pipex.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int main (int argc, char **argv, char **env_path)
-{
-    terminal(argv, argc, env_path, 1);    
-}
+# include <stdio.h>
+# include <stdlib.h>
+# include <stddef.h>
+# include <unistd.h>
+# include <fcntl.h>
 
+
+
+char	*get_next_line(int fd);
+char	*ft_separation(char **statik, int retour);
+
+int		index_newline(char *buf);
+void	ft_append(char **statik, char *buf, int retour);
+
+#endif

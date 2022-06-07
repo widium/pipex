@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 10:33:23 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/06 10:37:48 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/07 11:36:16 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ void choose_pipe_send(t_env *env, t_command *cmd)
 void command_redirection(t_env *env, t_command *cmd)
 {
     if (is_first_cmd(cmd))
-        dup2(env->file->fd_in, STDIN_FILENO);
+        dup2(env->in_file->fd , STDIN_FILENO);  
     else
         choose_pipe_receive(env, cmd);
     if (is_last_cmd(env, cmd))
-        dup2(env->file->fd_out, STDOUT_FILENO);
+        dup2(env->out_file->fd, STDOUT_FILENO);
     else 
         choose_pipe_send(env, cmd);
 }
