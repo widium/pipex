@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 15:03:26 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/06 16:43:40 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:48:38 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <fcntl.h>
-
-
 
 char	*get_next_line(int fd);
 char	*ft_separation(char **statik, int retour);

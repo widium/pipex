@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 10:52:36 by ebennace          #+#    #+#              #
-#    Updated: 2022/06/07 16:24:32 by ebennace         ###   ########.fr        #
+#    Updated: 2022/06/09 10:16:31 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,17 +14,17 @@ NAME = pipex
 
 SRCS		= 	get_next_line/get_next_line.c \
 				main.c \
-				init.c \
-				recover.c \
-				parsing.c \
-				test.c \
-				command.c \
-				pipe.c \
-				utils.c \
-				redirection.c \
-				all.c \
-				verbose.c \
-				file.c \
+				src/init.c \
+				src/recover.c \
+				src/parsing.c \
+				src/command.c \
+				src/pipe.c \
+				src/redirection.c \
+				src/all.c \
+				src/file.c \
+				utils/verbose.c \
+				utils/utils.c \
+				utils/free_exit.c \
 
 
 

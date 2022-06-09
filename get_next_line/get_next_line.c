@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 15:02:59 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/06 16:43:02 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:47:43 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <fcntl.h>
 
 #include "get_next_line.h"
-# include "../libft/libft.h"
+#include "../libft/libft.h"
 
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 4096

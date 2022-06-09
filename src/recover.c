@@ -6,34 +6,32 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:40:59 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/07 16:25:18 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:52:06 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../pipex.h"
 
-char *start_with(char *str, char *start)
+char	*start_with(char *str, char *start)
 {
-    int i;
-    char *result;
+	int		i;
+	char	*result;
 
-    result = ft_strnstr(str, start, ft_strlen(str));
-    // printf("%s\n",result);
-    if (result != str)
-        return (NULL);
-    return (result);
-    
+	result = ft_strnstr(str, start, ft_strlen(str));
+	if (result != str)
+		return (NULL);
+	return (result);
 }
 
-void recover_path(t_env *env, char **env_path)
+void	recover_path(t_env *env, char **env_path)
 {
-    int i;
+	int	i;
 
-    i = -1;
-    while (env_path[++i])
-    {
-        if (start_with(env_path[i], "PATH=") != NULL)
-            env->path->all_path = start_with(env_path[i], "PATH=");
-    }
-    env->path->list_of_path = ft_split(&env->path->all_path[5], ':');
+	i = -1;
+	while (env_path[++i])
+	{
+		if (start_with(env_path[i], "PATH=") != NULL)
+			env->path->all_path = start_with(env_path[i], "PATH=");
+	}
+	env->path->list_of_path = ft_split(&env->path->all_path[5], ':');
 }

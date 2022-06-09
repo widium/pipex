@@ -4,6 +4,8 @@
         "libft.h": "c",
         "pipex.h": "c",
         "type_traits": "c",
-        "source_location": "c"
+        "source_location": "c",
+        "chrono": "c",
+        "variant": "c"
     }
 }
