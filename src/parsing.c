@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:28:52 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/09 10:23:17 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:17:09 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,5 @@ int	check_input(t_env *env, char **argv, int argc)
 	else if (result == 1)
 		return (1);
 	parsing_exit(env);
+	return (0);
 }
