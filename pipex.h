@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:56:56 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/09 11:14:55 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 11:20:28 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include "libft/libft.h"
 # include "get_next_line/get_next_line.h"
+
 
 typedef struct s_file
 {
@@ -52,6 +53,7 @@ typedef struct s_env
 	char		*keyword;
 	int			start;
 	int			error;
+	char		**env_path;
 	t_file		*in_file;
 	t_file		*out_file;
 	t_file		*tmp_file;
@@ -70,7 +72,7 @@ void		here_doc(t_env *env);
 
 void		recover_path(t_env *env, char **env_path);
 int			create_command(t_env *env, t_command *command);
-int			exec_command(t_command *command);
+int			exec_command(t_env *env, t_command *command);
 void		connect_cmd(t_command *first_command, t_command *next_command);
 void		create_chained_list(t_env *env, char **argv, int argc);
 
@@ -104,5 +106,10 @@ void		error_exit(t_env *env);
 void		malloc_exit(void);
 void		parsing_exit(t_env *env);
 void		free_all(t_env *env);
-
+void		free_cmd(t_command *first_cmd);
+void		free_array(char **array);
+void		free_rec(t_command *cmd);
+size_t		col_count(char **str);
+char		*ft_strcpy(char *ori);
+char		**ft_strcpy_array(char **ori);
 #endif

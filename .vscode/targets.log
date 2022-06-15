@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Thu Jun  9 10:16:34 2022
+# Make data base, printed on Wed Jun 15 09:57:43 2022
 
 # Variables
 
@@ -20,19 +19,13 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/widium/.gtkrc:/home/widium/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8b06786e-f94e-4a89-a2cf-527a021b5fb7.sock
-# environment
-KONSOLE_DBUS_SERVICE = :1.2226
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-63d965cc-b6a5-4192-8e2d-55032df2e266.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
 LC_NUMERIC = fr_FR.UTF-8
 # environment
-VSCODE_CWD = /home/widium/Programming/42_cursus/pipex
-# environment
-WINDOWID = 138412039
-# environment
-LESS_TERMCAP_me = [0m
+VSCODE_CWD = /home/widium
 # environment
 LC_ADDRESS = fr_FR.UTF-8
 # default
@@ -43,8 +36,6 @@ GTK3_MODULES = xapp-gtk3-module
 @D = $(patsubst %/,%,$(dir $@))
 # environment
 GDK_DPI_SCALE = 0.5
-# environment
-KONSOLE_VERSION = 220401
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -57,10 +48,6 @@ PWD = /home/widium/Programming/42_cursus/pipex
 MAIL = /var/spool/mail/widium
 # environment
 XDG_DATA_DIRS = /home/widium/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
-# environment
-OLDPWD = /home/widium
-# environment
-KONSOLE_DBUS_WINDOW = /Windows/1
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -68,27 +55,19 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/widium/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /home/widium/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
 # environment
-CONDA_PROMPT_MODIFIER = (tf_gpu) 
-# environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session2
 # environment
 LANG = C
 # environment
 XAUTHORITY = /home/widium/.Xauthority
 # default
 .LOADED := 
-# environment
-LESS_TERMCAP_md = [01;32m
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
-# environment
-COLORFGBG = 15;0
 # makefile
 MAKEFLAGS = pqrR
-# environment
-LESS_TERMCAP_so = [01;47;34m
 # makefile
 CURDIR := /home/widium/Programming/42_cursus/pipex
 # environment
@@ -99,8 +78,6 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 SRCS = get_next_line/get_next_line.c main.c src/init.c src/recover.c src/parsing.c src/command.c src/pipe.c src/redirection.c src/all.c src/file.c utils/verbose.c utils/utils.c utils/free_exit.c 
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
-# environment
-LESS_TERMCAP_ue = [0m
 # environment
 PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
 # environment
@@ -114,31 +91,27 @@ XDG_CONFIG_DIRS = /home/widium/.config/kdedefaults:/etc/xdg
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
-P9K_SSH = 0
-# environment
 XCURSOR_THEME = breeze_cursors
 # environment
 XDG_SESSION_DESKTOP = KDE
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
 # environment
-CONDA_SHLVL = 1
+CONDA_SHLVL = 0
 # automatic
 @F = $(notdir $@)
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 1087223
+VSCODE_PID = 3837
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# environment
-CONDA_PYTHON_EXE = /usr/bin/python
 # makefile (from 'Makefile', line 34)
 FLAGS = -g3 
 # environment
-SESSION_MANAGER = local/manjaro:@/tmp/.ICE-unix/1086,unix/manjaro:/tmp/.ICE-unix/1086
+SESSION_MANAGER = local/manjaro:@/tmp/.ICE-unix/1501,unix/manjaro:/tmp/.ICE-unix/1501
 # automatic
 *F = $(notdir $*)
 # environment
@@ -148,37 +121,27 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
-P9K_TTY = old
-# environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # makefile (from 'Makefile', line 31)
 OBJS = $(SRCS:.c=.o)
-# environment
-CONDA_PREFIX = /home/widium/.conda/envs/tf_gpu
 # makefile
 SHELL = /bin/sh
-# environment
-LESS_TERMCAP_us = [01;36m
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 2
-# environment
-PROFILEHOME = 
+SHLVL = 1
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/widium/.conda/envs/tf_gpu/bin:/home/widium/.local/bin:/usr/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
-# environment
-LESS_TERMCAP_se = [0m
+PATH = /home/widium/.local/bin:/usr/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
 # default
 MAKEFILES := 
-# environment
-LANGUAGE = 
+# makefile (from 'Makefile', line 36)
+LEAKS = -fsanitize=leak
 # makefile (from 'Makefile', line 35)
 SANITIZE = -fsanitize=address
 # environment
@@ -189,8 +152,6 @@ MOTD_SHOWN = pam
 ^F = $(notdir $^)
 # environment
 LC_TIME = fr_FR.UTF-8
-# environment
-LESS_TERMCAP_mb = [01;32m
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -207,22 +168,16 @@ NAME = pipex
 XDG_SEAT = seat0
 # environment
 XDG_CURRENT_DESKTOP = KDE
-# environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:
 # automatic
 +F = $(notdir $+)
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
-# environment
-LESS = -R
 # environment
 DESKTOP_SESSION = plasma
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = KDE
 # 'override' directive
 GNUMAKEFLAGS := 
-# environment
-CONDA_DEFAULT_ENV = tf_gpu
 # environment
 QT_SCREEN_SCALE_FACTORS = eDP-1=2;DP-1=2;DP-2=2;DP-3=2;DP-4=2;DP-3-1=2;DP-3-2=2;DP-3-3=2;DP-1-0=2;DP-1-1=2;DP-1-2=2;DP-1-3=2;DP-1-4=2;DP-1-5=2;DP-1-6=2;DP-1-7=2;
 # environment
@@ -232,7 +187,7 @@ XDG_VTNR = 1
 # makefile
 .DEFAULT_GOAL := pipex
 # environment
-SYSTEMD_EXEC_PID = 952
+SYSTEMD_EXEC_PID = 1368
 # environment
 DISPLAY = :0
 # environment
@@ -244,8 +199,6 @@ MAKE_VERSION := 4.3
 # environment
 KDE_SESSION_UID = 1000
 # environment
-KONSOLE_DBUS_SESSION = /Sessions/1
-# environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
 DEBUGINFOD_URLS = https://debuginfod.archlinux.org 
@@ -255,10 +208,6 @@ _ = /usr/bin/make
 LC_PAPER = fr_FR.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
-# environment
-COLORTERM = truecolor
-# environment
-_CE_M = 
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -270,9 +219,7 @@ HOME = /home/widium
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-f0a1c65d-1.67.2-main.sock
-# environment
-TERM = xterm-256color
+VSCODE_IPC_HOOK = /run/user/1000/vscode-f0a1c65d-1.68.0-main.sock
 # environment
 XDG_SESSION_ID = 2
 # environment
@@ -286,16 +233,9 @@ SUFFIXES :=
 # environment
 QT_AUTO_SCREEN_SCALE_FACTOR = 0
 # environment
-_P9K_TTY = /dev/pts/2
-# environment
 VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
-# environment
-LS_OPTIONS = --color=auto
-# environment
- 
-SHELL_SESSION_ID = 0ce487632a2946afaef657b547eb4e39
 # environment
 KDE_SESSION_VERSION = 5
 # default
@@ -307,13 +247,9 @@ KDE_FULL_SESSION = true
 # environment
 CONDA_EXE = /usr/bin/conda
 # environment
-_CE_CONDA = 
-# environment
-PKGFILE_PROMPT_INSTALL_MISSING = 1
-# environment
 LC_IDENTIFICATION = fr_FR.UTF-8
 # variable set hash-table stats:
-# Load=150/1024=15%, Rehash=0, Collisions=22/191=12%
+# Load=119/1024=12%, Rehash=0, Collisions=10/162=6%
 
 # Pattern-specific Variable Values
 
@@ -323,84 +259,142 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 
 # get_next_line (device 66306, inode 5243011): 11 files, no impossibilities so far.
 # src (device 66306, inode 5242989): 18 files, no impossibilities so far.
-# . (device 66306, inode 5244610): 16 files, no impossibilities.
+# utils (device 66306, inode 5243071): 7 files, no impossibilities so far.
+# . (device 66306, inode 5244610): 18 files, no impossibilities.
 
-# 45 files, no impossibilities in 3 directories.
+# 54 files, no impossibilities in 4 directories.
 
 # Implicit Rules
 
 %.o: %.c
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 39):
 			$(CC) -c $(FLAGS) $< -o $@
 	
 
 # 1 implicit rules, 0 (0.0%) terminal.
 # Files
 
-# Not a target:
-utils/free_exit.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/all.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/command.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-src/init.o: src/init.c
+utils/free_exit.o: utils/free_exit.c
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/init'
-#  Last modified 2022-06-09 09:40:04.506672124
+#  Implicit/static pattern stem: 'utils/free_exit'
+#  Last modified 2022-06-14 17:38:39.70999923
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := utils/free_exit.o
+# automatic
+# * := utils/free_exit
+# automatic
+# < := utils/free_exit.c
+# automatic
+# + := utils/free_exit.c
+# automatic
+# % := 
+# automatic
+# ^ := utils/free_exit.c
+# automatic
+# ? := utils/free_exit.c
+# automatic
+# | := 
+# variable set hash-table stats:
+ 
+# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
+#  recipe to execute (from 'Makefile', line 39):
+			$(CC) -c $(FLAGS) $< -o $@
+	
+
+src/all.o: src/all.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/all'
+#  Last modified 2022-06-14 17:38:39.686665897
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 39):
+			$(CC) -c $(FLAGS) $< -o $@
+	
+
+src/command.o: src/command.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/command'
+#  Last modified 2022-06-14 17:32:28.29999914
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 39):
 			$(CC) -c $(FLAGS) $< -o $@
 	
 
 # Not a target:
-utils/verbose.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+utils/utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 10:15:39.126672784
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/file.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-14 17:00:05.570000493
+#  File has been updated.
+#  Successfully updated.
+
+src/init.o: src/init.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/init'
+#  Last modified 2022-06-14 15:28:45.403334353
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 39):
+			$(CC) -c $(FLAGS) $< -o $@
+	
+
+utils/verbose.o: utils/verbose.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/verbose'
+#  Last modified 2022-06-10 14:18:59.126669477
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 39):
+			$(CC) -c $(FLAGS) $< -o $@
+	
 
 debug: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_exit.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 55):
+#  recipe to execute (from 'Makefile', line 56):
 				$(CC) $(OBJS) $(FLAGS) $(SANITIZE) -g3 libft/libft.a  -o $(NAME)
 				gdb $(NAME)
+				
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 10:16:31.893339467
+#  Last modified 2022-06-10 14:24:02.813336265
 #  File has been updated.
 #  Successfully updated.
 
 pipex: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_exit.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-09 09:40:05.856672124
+#  Last modified 2022-06-14 17:38:39.74999923
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/5=0%
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 42):
 				make -C libft
 				$(CC) $(OBJS) $(FLAGS) libft/libft.a -o $(NAME)		
 
 # Not a target:
 src/parsing.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 10:07:41.563339303
+#  Last modified 2022-06-09 16:37:40.243334754
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/redirection.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 10:37:53.676673193
 #  File has been updated.
 #  Successfully updated.
 
@@ -409,15 +403,19 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 47):
+#  recipe to execute (from 'Makefile', line 48):
 				make clean -C libft
 				/bin/rm -rf $(OBJS)
 
-# Not a target:
-src/file.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/file.o: src/file.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/file'
+#  Last modified 2022-06-14 17:03:26.440000554
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 39):
+			$(CC) -c $(FLAGS) $< -o $@
+	
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -428,22 +426,29 @@ re: fclean all
 src/recover.o: src/recover.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/recover'
-#  Last modified 2022-06-09 09:40:04.533338791
+#  Last modified 2022-06-10 14:18:59.123336143
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 39):
 			$(CC) -c $(FLAGS) $< -o $@
 	
 
 get_next_line/get_next_line.o: get_next_line/get_next_line.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'get_next_line/get_next_line'
-#  Last modified 2022-06-09 09:40:04.446672124
+#  Last modified 2022-06-10 14:18:59.133336144
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 39):
 			$(CC) -c $(FLAGS) $< -o $@
 	
+
+# Not a target:
+src/pipe.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 10:29:34.083339706
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -466,38 +471,81 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 51):
+#  recipe to execute (from 'Makefile', line 52):
 				make fclean -C libft
 				/bin/rm -rf $(NAME)
 
 # Not a target:
-src/redirection.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/command.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-14 17:32:26.976665806
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-main.c:
+src/all.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-08 16:50:10.796666715
+#  Last modified 2022-06-14 17:38:05.846665887
 #  File has been updated.
 #  Successfully updated.
 
-main.o: main.c
+src/redirection.o: src/redirection.c
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-09 09:40:04.476672123
+#  Implicit/static pattern stem: 'src/redirection'
+#  Last modified 2022-06-10 14:18:59.126669477
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 39):
 			$(CC) -c $(FLAGS) $< -o $@
 	
 
 # Not a target:
-src/pipe.o:
+main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-14 17:35:55.393332516
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+utils/free_exit.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-14 17:57:35.056665464
+#  File has been updated.
+#  Successfully updated.
+
+leak: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_exit.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 60):
+				$(CC) $(OBJS) $(LEAKS) -g3 libft/libft.a  -o $(NAME)
+
+main.o: main.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main'
+#  Last modified 2022-06-14 17:36:01.71666585
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 39):
+			$(CC) -c $(FLAGS) $< -o $@
+	
+
+# Not a target:
+utils/verbose.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 10:37:04.743339844
+#  File has been updated.
+#  Successfully updated.
+
+src/pipe.o: src/pipe.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/pipe'
+#  Last modified 2022-06-10 14:18:59.126669477
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 39):
+			$(CC) -c $(FLAGS) $< -o $@
+	
 
 # Not a target:
 src/recover.c:
@@ -506,38 +554,23 @@ src/recover.c:
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-utils/utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+utils/utils.o: utils/utils.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/utils'
+#  Last modified 2022-06-10 14:18:59.126669477
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 39):
+			$(CC) -c $(FLAGS) $< -o $@
+	
 
 src/parsing.o: src/parsing.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/parsing'
-#  Last modified 2022-06-09 09:40:04.56333879
+#  Last modified 2022-06-10 14:18:59.126669477
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := src/parsing.o
-# automatic
-# * := src/parsing
-# automatic
-# < := src/parsing.c
-# automatic
-# + := src/parsing.c
-# automatic
-# % := 
-# automatic
-# ^ := src/parsing.c
-# automatic
-# ? := src/parsing.c
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
- 
-#  recipe to execute (from 'Makefile', line 38):
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 39):
 			$(CC) -c $(FLAGS) $< -o $@
 	
 
@@ -556,24 +589,25 @@ get_next_line/get_next_line.c:
 # Not a target:
 src/init.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-08 11:51:57.126666877
+#  Last modified 2022-06-14 15:19:27.463334184
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=28/1024=3%, Rehash=0, Collisions=0/88=0%
+# Load=37/1024=4%, Rehash=0, Collisions=0/134=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 73 / storage = 826 B / avg = 11 B
-# current buf: size = 8162 B / used = 826 B / count = 73 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 97 / storage = 1105 B / avg = 11 B
+# current buf: size = 8162 B / used = 1105 B / count = 97 / avg = 11 B
 
-# strcache performance: lookups = 121 / hit rate = 39%
+# strcache performance: lookups = 170 / hit rate = 42%
 # hash-table stats:
-# Load=73/8192=1%, Rehash=0, Collisions=0/121=0%
-# Finished Make data base on Thu Jun  9 10:16:34 2022
+ 
+# Load=97/8192=1%, Rehash=0, Collisions=0/170=0%
+# Finished Make data base on Wed Jun 15 09:57:43 2022
 
  

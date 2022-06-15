@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:55:37 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/09 10:29:34 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 11:23:09 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	pipex(t_env *env, t_command *cmd)
 	{
 		command_redirection(env, cmd);
 		close_all(env);
-		if (exec_command(cmd) == -1)
+		if (exec_command(env, cmd) == -1)
 			error_exit(env);
 	}
 }

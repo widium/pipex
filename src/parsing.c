@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:28:52 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/09 13:17:09 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 10:57:45 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	create_chained_list(t_env *env, char **argv, int argc)
 
 	i = env->start;
 	index = 1;
-	while (i < argc)
+	while (i < argc - 1)
 	{
 		if (i < (env->start + 1))
 		{

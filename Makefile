@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 10:52:36 by ebennace          #+#    #+#              #
-#    Updated: 2022/06/09 10:16:31 by ebennace         ###   ########.fr        #
+#    Updated: 2022/06/10 14:24:02 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ CC				= clang
 # FLAGS 		= -Wall -Werror -Wextra
 FLAGS			= -g3 
 SANITIZE 		= -fsanitize=address
+LEAKS 			= -fsanitize=leak
 
 %.o : %.c
 			$(CC) -c $(FLAGS) $< -o $@
@@ -54,6 +55,9 @@ fclean : clean
 debug : 		$(OBJS)
 				$(CC) $(OBJS) $(FLAGS) $(SANITIZE) -g3 libft/libft.a  -o $(NAME)
 				gdb $(NAME)
+				
+leak :			$(OBJS)
+				$(CC) $(OBJS) $(LEAKS) -g3 libft/libft.a  -o $(NAME)
 
 
 re : fclean all

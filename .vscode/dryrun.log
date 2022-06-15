@@ -1,9 +1,13 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/widium/Programming/42_cursus/pipex'
+clang -c -g3  get_next_line/get_next_line.c -o get_next_line/get_next_line.o
+clang -c -g3  main.c -o main.o
+clang -c -g3  src/init.c -o src/init.o
+clang -c -g3  src/recover.c -o src/recover.o
 clang -c -g3  src/parsing.c -o src/parsing.o
- 
 clang -c -g3  src/command.c -o src/command.o
 clang -c -g3  src/pipe.c -o src/pipe.o
+clang -c -g3  src/redirection.c -o src/redirection.o
 clang -c -g3  src/all.c -o src/all.o
 clang -c -g3  src/file.c -o src/file.o
 clang -c -g3  utils/verbose.c -o utils/verbose.o

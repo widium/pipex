@@ -11,7 +11,7 @@
             "request": "launch",
             "cwd"  : "${workspaceFolder}",
             "program": "${workspaceFolder}/pipex",
-            "args" : ["in_file", "grep main.c", "cat -e", "echo", "pwd", "ls", "out_file"],
+            "args" : ["in_file", "\"grep main.c\"", "\"cat -e\"", "out_file"],
             "MIMode": "gdb",
             "miDebuggerPath": "/usr/bin/gdb"
         }
