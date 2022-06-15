@@ -1,2 +1,5 @@
-Free complete : /usr/bin/wc -l
-Free complete : /usr/bin/wc -l$
+Error :
+- Fork Fail
+- Pipe Fail
+- dup2 Fail
+- execv Fail

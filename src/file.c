@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:24:14 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/14 17:00:05 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 14:02:54 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,41 @@
 void	here_doc(t_env *env)
 {
 	char	*line;
+	char	*name;
+	int		fd;
 
-	env->tmp_file->name = "tempo.txt";
-	env->tmp_file->fd = open(env->tmp_file->name, O_CREAT | O_WRONLY, 0777);
+	name = "tempo.txt";
+	env->tmp_file->name = name;
+	env->tmp_file->fd = open(name, O_CREAT | O_WRONLY, 0777);
+
 	if (env->tmp_file->fd == -1)
 		parsing_exit(env);
+
 	while (1)
 	{
 		line = get_next_line(STDIN_FILENO);
 		if (!ft_strncmp(env->keyword, line, (ft_strlen(env->keyword))))
+		{
+			free(line);
 			break ;
+		}
 		else
+		{
 			ft_putstr_fd(line, env->tmp_file->fd);
+			free(line);
+		}
 	}
 	close(env->tmp_file->fd);
-	env->tmp_file->fd = open(env->tmp_file->name, O_RDONLY);
-	env->in_file = env->tmp_file;
-	unlink(env->tmp_file->name);
-	if (env->tmp_file->fd == -1)
+	fd = open(name, O_RDONLY);
+	
+	env->in_file->fd = fd;
+	env->in_file->name = "in_file";
+	unlink(name);
+	
+	if (fd == -1)
 		parsing_exit(env);
+
+	free(env->tmp_file);
 }
 
 int	detect_in_file_or_keyword(t_env *env, char **argv, int argc)

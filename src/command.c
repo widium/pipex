@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:36:08 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 11:21:53 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 14:10:27 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ int	create_command(t_env *env, t_command *command)
 		fd = access(env->path->path_bin, X_OK & F_OK);
 		if (fd == 0)
 		{
-			command->complete[0] = ft_strcpy(env->path->path_bin);
+			command->bin = ft_strcpy(env->path->path_bin);
 			command->complete[1] = command->flags;
-			command->bin = command->complete[0];
-			command->flags = command->complete[1];
 			free(env->path->path_bin);
 			return (1);
 		}
@@ -38,7 +36,7 @@ int	create_command(t_env *env, t_command *command)
 }
 
 void	setup_cmd(t_env *env, t_command *cmd, char *argv, int index)
-{
+{	
 	cmd->index = index;
 	cmd->brut = argv;
 	cmd->complete = ft_split(cmd->brut, ' ');
@@ -72,12 +70,8 @@ void	count_cmd(t_env *env)
 int	exec_command(t_env *env, t_command *command)
 {	
 	int		result;
-	char	**argv;
-	char	**env_path;
 
-	argv = ft_strcpy_array(command->complete);
-	env_path = env->env_path;
-	free_all(env);
-	result = execve(argv[0], argv, env_path);
+	// free_all(env);
+	result = execve(command->complete[0], command->complete, env->env_path);
 	return (result);
 }

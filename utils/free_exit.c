@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 10:15:15 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 11:27:36 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 14:05:42 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,15 @@ void	free_all(t_env *env)
 	// free_array(argv_cpy);
 	fprintf(stderr,"--- Free chained list cmd ----\n");
 	free_cmd(env->first_cmd);
+	fprintf(stderr,"Free in_file : %s | adress : %p\n", env->in_file->name, env->in_file);
 	free(env->in_file);
+	fprintf(stderr,"Free out_file : %s | adress : %p\n", env->out_file->name, env->out_file);
 	free(env->out_file);
-	free(env->tmp_file);
+	// if (env->tmp_file)
+	// {
+	// 	fprintf(stderr,"Free tmp_file : %s | adress : %p\n", env->tmp_file->name, env->tmp_file);
+	// 	free(env->tmp_file);
+	// }
 	free_array(env->path->list_of_path);
 	free(env->path);
 	free(env);
@@ -78,9 +84,9 @@ void	free_cmd(t_command *cmd)
 		iter = cmd->next_cmd;
 		fprintf(stderr,"-------\n");
 		fprintf(stderr,"Free cmd %p\n", cmd);
-		fprintf(stderr,"Free bin : %s\n", cmd->bin);
+		fprintf(stderr,"Free bin : %s | adress : %p\n", cmd->bin, cmd->bin);
 		free(cmd->bin);
-		fprintf(stderr,"Free complete : %s %s\n", cmd->complete[0], cmd->complete[1]);
+		fprintf(stderr,"Free complete : %s %s | adress : %p\n", cmd->complete[0], cmd->complete[1], cmd->complete);
 		free_array(cmd->complete);
 		
 		free(cmd);
@@ -88,9 +94,9 @@ void	free_cmd(t_command *cmd)
 	}
 	fprintf(stderr,"-------\n");
 	fprintf(stderr,"Free cmd %p\n", cmd);
-	fprintf(stderr,"Free bin : %s\n", cmd->bin);
+	fprintf(stderr,"Free bin : %s | adress : %p\n", cmd->bin, cmd->bin);
 	free(cmd->bin);
-	printf("Free complete : %s %s\n", cmd->complete[0], cmd->complete[1]);
+	fprintf(stderr,"Free complete : %s %s | adress : %p\n", cmd->complete[0], cmd->complete[1], cmd->complete);
 	free_array(cmd->complete);
 	
 	free(cmd);

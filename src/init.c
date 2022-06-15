@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 10:54:50 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 11:26:43 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 13:32:01 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ t_command	*init_command(void)
 	command->brut = NULL;
 	command->bin = NULL;
 	command->flags = NULL;
-	command->complete = malloc(sizeof(char *) * 2);
-	if (!(command->complete))
-		malloc_exit();
+	command->complete = NULL;
 	command->next_cmd = NULL;
 	command->index = 0;
 	return (command);
