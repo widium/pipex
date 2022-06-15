@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:28:52 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 10:57:45 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 15:54:25 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	check_input(t_env *env, char **argv, int argc)
 	detect_and_create_out_file(env, argv, argc);
 	if (result == 2)
 	{
+		env->tmp_file = init_file();
 		here_doc(env);
 		return (1);
 	}

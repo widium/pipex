@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:36:08 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 14:10:27 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 17:44:09 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	create_command(t_env *env, t_command *command)
 {
 	int	y;
 	int	fd;
+	char *path_bin;
 
 	y = -1;
 	while (env->path->list_of_path[++y])
@@ -25,7 +26,9 @@ int	create_command(t_env *env, t_command *command)
 		fd = access(env->path->path_bin, X_OK & F_OK);
 		if (fd == 0)
 		{
+			free(command->bin);
 			command->bin = ft_strcpy(env->path->path_bin);
+			command->complete[0] = command->bin;
 			command->complete[1] = command->flags;
 			free(env->path->path_bin);
 			return (1);
@@ -67,11 +70,14 @@ void	count_cmd(t_env *env)
 	env->nbr_cmd = i;
 }
 
-int	exec_command(t_env *env, t_command *command)
+void	exec_command(t_env *env, t_command *command)
 {	
 	int		result;
 
 	// free_all(env);
+	fprintf(stderr, "path : %s\n", command->complete[0]);
+	fprintf(stderr, "complete : %s %s\n", command->complete[0], command->complete[1]);
 	result = execve(command->complete[0], command->complete, env->env_path);
-	return (result);
+	if (result == -1)
+		error_exit(env);
 }

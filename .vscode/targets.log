@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun 15 09:57:43 2022
+# Make data base, printed on Wed Jun 15 16:24:06 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/widium/.gtkrc:/home/widium/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-63d965cc-b6a5-4192-8e2d-55032df2e266.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-4ebfc3aa-345a-45c3-b516-3b2cda6921d4.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -103,7 +103,7 @@ CONDA_SHLVL = 0
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 3837
+VSCODE_PID = 47641
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -249,7 +249,7 @@ CONDA_EXE = /usr/bin/conda
 # environment
 LC_IDENTIFICATION = fr_FR.UTF-8
 # variable set hash-table stats:
-# Load=119/1024=12%, Rehash=0, Collisions=10/162=6%
+# Load=119/1024=12%, Rehash=0, Collisions=11/159=7%
 
 # Pattern-specific Variable Values
 
@@ -277,28 +277,10 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 utils/free_exit.o: utils/free_exit.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'utils/free_exit'
-#  Last modified 2022-06-14 17:38:39.70999923
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := utils/free_exit.o
-# automatic
-# * := utils/free_exit
-# automatic
-# < := utils/free_exit.c
-# automatic
-# + := utils/free_exit.c
-# automatic
-# % := 
-# automatic
-# ^ := utils/free_exit.c
-# automatic
-# ? := utils/free_exit.c
-# automatic
-# | := 
-# variable set hash-table stats:
+#  Last modified 2022-06-15 16:19:29.086660408
  
-# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
 			$(CC) -c $(FLAGS) $< -o $@
 	
@@ -306,7 +288,7 @@ utils/free_exit.o: utils/free_exit.c
 src/all.o: src/all.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/all'
-#  Last modified 2022-06-14 17:38:39.686665897
+#  Last modified 2022-06-15 16:19:28.996660408
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -316,7 +298,7 @@ src/all.o: src/all.c
 src/command.o: src/command.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/command'
-#  Last modified 2022-06-14 17:32:28.29999914
+#  Last modified 2022-06-15 16:19:28.929993741
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -333,14 +315,14 @@ utils/utils.c:
 # Not a target:
 src/file.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-14 17:00:05.570000493
+#  Last modified 2022-06-15 15:55:50.946659981
 #  File has been updated.
 #  Successfully updated.
 
 src/init.o: src/init.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/init'
-#  Last modified 2022-06-14 15:28:45.403334353
+#  Last modified 2022-06-15 16:19:28.856660408
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -350,7 +332,7 @@ src/init.o: src/init.c
 utils/verbose.o: utils/verbose.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'utils/verbose'
-#  Last modified 2022-06-10 14:18:59.126669477
+#  Last modified 2022-06-15 16:19:29.039993741
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -369,17 +351,15 @@ debug: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-10 14:24:02.813336265
+#  Last modified 2022-06-15 15:57:18.323326674
 #  File has been updated.
 #  Successfully updated.
 
 pipex: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_exit.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-14 17:38:39.74999923
+#  Last modified 2022-06-15 16:19:29.849993741
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 42):
 				make -C libft
 				$(CC) $(OBJS) $(FLAGS) libft/libft.a -o $(NAME)		
@@ -387,7 +367,7 @@ pipex: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing
 # Not a target:
 src/parsing.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 16:37:40.243334754
+#  Last modified 2022-06-15 15:54:25.189993288
 #  File has been updated.
 #  Successfully updated.
 
@@ -410,7 +390,7 @@ clean:
 src/file.o: src/file.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/file'
-#  Last modified 2022-06-14 17:03:26.440000554
+#  Last modified 2022-06-15 16:19:29.016660408
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -426,7 +406,7 @@ re: fclean all
 src/recover.o: src/recover.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/recover'
-#  Last modified 2022-06-10 14:18:59.123336143
+#  Last modified 2022-06-15 16:19:28.879993741
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -436,7 +416,7 @@ src/recover.o: src/recover.c
 get_next_line/get_next_line.o: get_next_line/get_next_line.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'get_next_line/get_next_line'
-#  Last modified 2022-06-10 14:18:59.133336144
+#  Last modified 2022-06-15 16:19:28.813327074
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -446,7 +426,7 @@ get_next_line/get_next_line.o: get_next_line/get_next_line.c
 # Not a target:
 src/pipe.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 10:29:34.083339706
+#  Last modified 2022-06-15 11:23:09.17666897
 #  File has been updated.
 #  Successfully updated.
 
@@ -462,9 +442,7 @@ all: pipex
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  Successfully updated.
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
@@ -478,21 +456,21 @@ fclean: clean
 # Not a target:
 src/command.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-14 17:32:26.976665806
+#  Last modified 2022-06-15 15:52:55.973326594
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/all.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-14 17:38:05.846665887
+#  Last modified 2022-06-15 16:09:43.446660228
 #  File has been updated.
 #  Successfully updated.
 
 src/redirection.o: src/redirection.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/redirection'
-#  Last modified 2022-06-10 14:18:59.126669477
+#  Last modified 2022-06-15 16:19:28.973327074
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -509,21 +487,22 @@ main.c:
 # Not a target:
 utils/free_exit.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-14 17:57:35.056665464
+#  Last modified 2022-06-15 16:18:13.833327052
 #  File has been updated.
 #  Successfully updated.
 
 leak: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_exit.o
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 60):
-				$(CC) $(OBJS) $(LEAKS) -g3 libft/libft.a  -o $(NAME)
+#  recipe to execute (from 'Makefile', line 63):
+				$(CC) $(OBJS) $(FLAGS) $(LEAKS) libft/libft.a  -o $(NAME)
 
 main.o: main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-14 17:36:01.71666585
+#  Last modified 2022-06-15 16:19:28.833327075
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -540,7 +519,7 @@ utils/verbose.c:
 src/pipe.o: src/pipe.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/pipe'
-#  Last modified 2022-06-10 14:18:59.126669477
+#  Last modified 2022-06-15 16:19:28.949993741
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -557,7 +536,7 @@ src/recover.c:
 utils/utils.o: utils/utils.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'utils/utils'
-#  Last modified 2022-06-10 14:18:59.126669477
+#  Last modified 2022-06-15 16:19:29.063327074
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -567,14 +546,23 @@ utils/utils.o: utils/utils.c
 src/parsing.o: src/parsing.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/parsing'
-#  Last modified 2022-06-10 14:18:59.126669477
+#  Last modified 2022-06-15 16:19:28.903327074
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
 			$(CC) -c $(FLAGS) $< -o $@
 	
 
-.PHONY: all clean fclean re
+sanitize: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_exit.o
+ 
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 60):
+				$(CC) $(OBJS) $(FLAGS) $(SANITIZE) libft/libft.a  -o $(NAME)
+
+.PHONY: all clean fclean re leak sanitize
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -589,25 +577,24 @@ get_next_line/get_next_line.c:
 # Not a target:
 src/init.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-14 15:19:27.463334184
+#  Last modified 2022-06-15 15:59:50.016660051
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=37/1024=4%, Rehash=0, Collisions=0/134=0%
+# Load=38/1024=4%, Rehash=0, Collisions=0/150=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 97 / storage = 1105 B / avg = 11 B
-# current buf: size = 8162 B / used = 1105 B / count = 97 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 98 / storage = 1114 B / avg = 11 B
+# current buf: size = 8162 B / used = 1114 B / count = 98 / avg = 11 B
 
-# strcache performance: lookups = 170 / hit rate = 42%
+# strcache performance: lookups = 187 / hit rate = 47%
 # hash-table stats:
- 
-# Load=97/8192=1%, Rehash=0, Collisions=0/170=0%
-# Finished Make data base on Wed Jun 15 09:57:43 2022
+# Load=98/8192=1%, Rehash=0, Collisions=0/187=0%
+# Finished Make data base on Wed Jun 15 16:24:06 2022
 
  

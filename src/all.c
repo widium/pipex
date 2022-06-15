@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:52:55 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 11:22:45 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:09:43 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ int	terminal(char **argv, int argc, char **env_path, int verbose)
 	char		**argv_cpy;
 
 	env = init_env();
-	argv_cpy = ft_strcpy_array(argv);
+	env->argv_cpy = ft_strcpy_array(argv);
 	env->env_path = env_path;
-	manage_parsing(env, argv_cpy, argc, env_path);
-	free_array(argv_cpy);
+	manage_parsing(env, env->argv_cpy, argc, env_path);
 	multi_pipex(env);
 	if (verbose == 1)
 	{

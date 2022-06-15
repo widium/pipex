@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 10:54:50 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 13:32:01 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 15:59:50 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ t_command	*init_command(void)
 	t_command	*command;
 
 	command = (t_command *)malloc(sizeof(t_command));
-	printf("Malloc cmd %p\n", command);
 	if (!command)
 		malloc_exit();
 	command->brut = NULL;
@@ -63,7 +62,6 @@ t_env	*init_env(void)
 		malloc_exit();
 	env->in_file = init_file();
 	env->out_file = init_file();
-	env->tmp_file = init_file();
 	env->first_cmd = NULL;
 	env->path = init_path();
 	env->nbr_cmd = 0;

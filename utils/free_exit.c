@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 10:15:15 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 14:05:42 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:34:18 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,56 +24,34 @@ void	close_all(t_env *env)
 
 void	error_exit(t_env *env)
 {
-	ft_putstr_fd("Error :\n", 1);
-	ft_putstr_fd("- Fork Fail\n", 1);
-	ft_putstr_fd("- Pipe Fail\n", 1);
-	ft_putstr_fd("- dup2 Fail\n", 1);
-	ft_putstr_fd("- execv Fail\n", 1);
-	// free_all(env);
+	fprintf(stderr,"Error :\n");
+	fprintf(stderr,"- Fork Fail\n");
+	fprintf(stderr,"- Pipe Fail\n");
+	fprintf(stderr,"- dup2 Fail\n");
+	fprintf(stderr,"- execv Fail\n");
+	free_all(env);
 	exit(0);
 }
 
 void	parsing_exit(t_env *env)
 {
 	print_error();
-	// free_all(env);
+	free_all(env);
 	exit(0);
 }
 
 void	free_all(t_env *env)
 {
-	fprintf(stderr,"==== Free all ====\n");
-	// printf("Free argv_cpy\n");
-	// free_array(argv_cpy);
-	fprintf(stderr,"--- Free chained list cmd ----\n");
+	free_array(env->argv_cpy);
 	free_cmd(env->first_cmd);
-	fprintf(stderr,"Free in_file : %s | adress : %p\n", env->in_file->name, env->in_file);
+	free(env->in_file->name);
 	free(env->in_file);
-	fprintf(stderr,"Free out_file : %s | adress : %p\n", env->out_file->name, env->out_file);
+	free(env->out_file->name);
 	free(env->out_file);
-	// if (env->tmp_file)
-	// {
-	// 	fprintf(stderr,"Free tmp_file : %s | adress : %p\n", env->tmp_file->name, env->tmp_file);
-	// 	free(env->tmp_file);
-	// }
 	free_array(env->path->list_of_path);
 	free(env->path);
 	free(env);
 }
-
-// void	free_cmd(t_command *cmd)
-// {
-// 	t_command	*iter;
-// 	int			i;
-
-// 	i = 0;
-
-// 	free_array(cmd->complete);
-// 	// free(cmd->flags);
-// 	//free(cmd->brut);
-// 	free(cmd->bin);
-// 	free(cmd);
-// }
 
 void	free_cmd(t_command *cmd)
 {
@@ -82,32 +60,15 @@ void	free_cmd(t_command *cmd)
 	while (cmd->next_cmd)
 	{
 		iter = cmd->next_cmd;
-		fprintf(stderr,"-------\n");
-		fprintf(stderr,"Free cmd %p\n", cmd);
-		fprintf(stderr,"Free bin : %s | adress : %p\n", cmd->bin, cmd->bin);
 		free(cmd->bin);
-		fprintf(stderr,"Free complete : %s %s | adress : %p\n", cmd->complete[0], cmd->complete[1], cmd->complete);
 		free_array(cmd->complete);
-		
 		free(cmd);
 		cmd = iter;
 	}
-	fprintf(stderr,"-------\n");
-	fprintf(stderr,"Free cmd %p\n", cmd);
-	fprintf(stderr,"Free bin : %s | adress : %p\n", cmd->bin, cmd->bin);
 	free(cmd->bin);
-	fprintf(stderr,"Free complete : %s %s | adress : %p\n", cmd->complete[0], cmd->complete[1], cmd->complete);
 	free_array(cmd->complete);
-	
 	free(cmd);
 }
-
-// void free_rec(t_command *cmd)
-// {
-// 	if(cmd->next_cmd)
-// 		free_rec(cmd->next_cmd);
-// 	free_cmd(cmd);
-// }
 
 void	malloc_exit(void)
 {
@@ -126,6 +87,5 @@ void free_array(char **array)
 		array[i] = NULL;
 		i++;
 	}
-	// free(array[i]);
 	free(array);
 }

@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:56:56 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 11:20:28 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:40:26 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_env
 	int			start;
 	int			error;
 	char		**env_path;
+	char		**argv_cpy;
 	t_file		*in_file;
 	t_file		*out_file;
 	t_file		*tmp_file;
@@ -72,7 +73,7 @@ void		here_doc(t_env *env);
 
 void		recover_path(t_env *env, char **env_path);
 int			create_command(t_env *env, t_command *command);
-int			exec_command(t_env *env, t_command *command);
+void		exec_command(t_env *env, t_command *command);
 void		connect_cmd(t_command *first_command, t_command *next_command);
 void		create_chained_list(t_env *env, char **argv, int argc);
 

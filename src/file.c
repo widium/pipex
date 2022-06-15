@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:24:14 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 14:02:54 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/15 15:55:50 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	here_doc(t_env *env)
 	fd = open(name, O_RDONLY);
 	
 	env->in_file->fd = fd;
-	env->in_file->name = "in_file";
+	env->in_file->name = NULL;
 	unlink(name);
 	
 	if (fd == -1)
@@ -66,7 +66,7 @@ int	detect_in_file_or_keyword(t_env *env, char **argv, int argc)
 	}
 	else
 	{
-		env->in_file->name = argv[1];
+		env->in_file->name = ft_strcpy(argv[1]);
 		env->in_file->fd = open(env->in_file->name, O_RDONLY, 0777);
 		env->start = 2;
 		if (env->in_file->fd == -1)
@@ -77,7 +77,7 @@ int	detect_in_file_or_keyword(t_env *env, char **argv, int argc)
 
 void	detect_and_create_out_file(t_env *env, char **argv, int argc)
 {
-	env->out_file->name = argv[argc - 1];
+	env->out_file->name = ft_strcpy(argv[argc - 1]);
 	env->out_file->fd = open(env->out_file->name,
 			O_CREAT | O_WRONLY | O_TRUNC, 0777);
 	if (env->out_file->fd == -1)
