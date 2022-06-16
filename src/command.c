@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:36:08 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 17:44:09 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:38:49 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	create_command(t_env *env, t_command *command)
 {
-	int	y;
-	int	fd;
-	char *path_bin;
+	int		y;
+	int		fd;
+	char	*path_bin;
 
 	y = -1;
 	while (env->path->list_of_path[++y])
@@ -28,8 +28,8 @@ int	create_command(t_env *env, t_command *command)
 		{
 			free(command->bin);
 			command->bin = ft_strcpy(env->path->path_bin);
-			command->complete[0] = command->bin;
-			command->complete[1] = command->flags;
+			free(command->complete[0]);
+			command->complete[0] = ft_strcpy(command->bin);
 			free(env->path->path_bin);
 			return (1);
 		}
@@ -43,7 +43,6 @@ void	setup_cmd(t_env *env, t_command *cmd, char *argv, int index)
 	cmd->index = index;
 	cmd->brut = argv;
 	cmd->complete = ft_split(cmd->brut, ' ');
-	cmd->flags = cmd->complete[1];
 	cmd->bin = ft_strjoin("/", cmd->complete[0]);
 	create_command(env, cmd);
 }
@@ -74,10 +73,7 @@ void	exec_command(t_env *env, t_command *command)
 {	
 	int		result;
 
-	// free_all(env);
-	fprintf(stderr, "path : %s\n", command->complete[0]);
-	fprintf(stderr, "complete : %s %s\n", command->complete[0], command->complete[1]);
 	result = execve(command->complete[0], command->complete, env->env_path);
 	if (result == -1)
-		error_exit(env);
+		error_exit(env, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:24:14 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 15:55:50 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:34:07 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,7 @@ void	here_doc(t_env *env)
 	char	*name;
 	int		fd;
 
-	name = "tempo.txt";
-	env->tmp_file->name = name;
-	env->tmp_file->fd = open(name, O_CREAT | O_WRONLY, 0777);
-
-	if (env->tmp_file->fd == -1)
-		parsing_exit(env);
-
+	create_tmp_file(env);
 	while (1)
 	{
 		line = get_next_line(STDIN_FILENO);
@@ -39,16 +33,33 @@ void	here_doc(t_env *env)
 			free(line);
 		}
 	}
+	close_and_save_tmp_file(env);
+}
+
+void	create_tmp_file(t_env *env)
+{
+	char	*name;
+	int		fd;
+
+	name = "tempo.txt";
+	env->tmp_file->name = name;
+	fd = open(name, O_CREAT | O_WRONLY, 0777);
+	env->tmp_file->fd = fd;
+	if (env->tmp_file->fd == -1)
+		parsing_exit(env);
+}
+
+void	close_and_save_tmp_file(t_env *env)
+{
+	int	fd;
+
 	close(env->tmp_file->fd);
-	fd = open(name, O_RDONLY);
-	
+	fd = open(env->tmp_file->name, O_RDONLY);
 	env->in_file->fd = fd;
 	env->in_file->name = NULL;
-	unlink(name);
-	
+	unlink(env->tmp_file->name);
 	if (fd == -1)
 		parsing_exit(env);
-
 	free(env->tmp_file);
 }
 

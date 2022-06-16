@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:52:55 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 16:09:43 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:22:53 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,50 +30,4 @@ int	terminal(char **argv, int argc, char **env_path, int verbose)
 	}
 	free_all(env);
 	return (1);
-}
-
-
-
-char *ft_strcpy(char *ori)
-{
-	size_t	i;
-	char	*str;
-
-	str = malloc(sizeof(char) * ( ft_strlen(ori) + 1));
-	i = 0;
-	while(ori[i])
-	{
-		str[i] = ori[i];
-		i++;
-	}
-	str[i] = 0;
-	return (str);
-}
-
-char **ft_strcpy_array(char **ori)
-{
-	size_t	i;
-	size_t	len;
-	char	**array;
-
-	len = col_count(ori);
-	array = malloc(sizeof(char *) * (len + 1));
-	i = 0;
-	while(ori[i])
-	{
-		array[i] = ft_strcpy(ori[i]);
-		i++;
-	}
-	array[i] = 0;
-	return (array);
-}
-
-size_t col_count(char **str)
-{
-	size_t i;
-	
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
 }

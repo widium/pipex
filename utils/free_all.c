@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_exit.c                                        :+:      :+:    :+:   */
+/*   free_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 10:15:15 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/15 16:34:18 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:22:21 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,6 @@ void	close_all(t_env *env)
 	close(env->fd[1]);
 	close(env->fd_next[0]);
 	close(env->fd_next[1]);
-}
-
-void	error_exit(t_env *env)
-{
-	fprintf(stderr,"Error :\n");
-	fprintf(stderr,"- Fork Fail\n");
-	fprintf(stderr,"- Pipe Fail\n");
-	fprintf(stderr,"- dup2 Fail\n");
-	fprintf(stderr,"- execv Fail\n");
-	free_all(env);
-	exit(0);
-}
-
-void	parsing_exit(t_env *env)
-{
-	print_error();
-	free_all(env);
-	exit(0);
 }
 
 void	free_all(t_env *env)
@@ -70,15 +52,9 @@ void	free_cmd(t_command *cmd)
 	free(cmd);
 }
 
-void	malloc_exit(void)
+void	free_array(char **array)
 {
-	ft_putstr_fd("Malloc Fail\n", 1);
-	exit(0);
-}
-
-void free_array(char **array)
-{
-	int i;
+	int	i;
 
 	i = 0;
 	while (array[i])

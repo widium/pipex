@@ -1,6 +1,7 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/widium/Programming/42_cursus/pipex'
 clang -c -g3  get_next_line/get_next_line.c -o get_next_line/get_next_line.o
+ 
 clang -c -g3  main.c -o main.o
 clang -c -g3  src/init.c -o src/init.o
 clang -c -g3  src/recover.c -o src/recover.o
@@ -11,9 +12,12 @@ clang -c -g3  src/redirection.c -o src/redirection.o
 clang -c -g3  src/all.c -o src/all.o
 clang -c -g3  src/file.c -o src/file.o
 clang -c -g3  utils/verbose.c -o utils/verbose.o
+ 
 clang -c -g3  utils/utils.c -o utils/utils.o
-clang -c -g3  utils/free_exit.c -o utils/free_exit.o
+clang -c -g3  utils/free_all.c -o utils/free_all.o
+clang -c -g3  utils/exit.c -o utils/exit.o
+clang -c -g3  utils/cpy.c -o utils/cpy.o
 make -C libft
-clang get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_exit.o -g3  libft/libft.a -o pipex		
+clang get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_all.o utils/exit.o utils/cpy.o -g3  libft/libft.a -o pipex		
 make: Leaving directory '/home/widium/Programming/42_cursus/pipex'
  

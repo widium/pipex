@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 10:52:36 by ebennace          #+#    #+#              #
-#    Updated: 2022/06/15 15:57:18 by ebennace         ###   ########.fr        #
+#    Updated: 2022/06/16 18:23:10 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ SRCS		= 	get_next_line/get_next_line.c \
 				src/file.c \
 				utils/verbose.c \
 				utils/utils.c \
-				utils/free_exit.c \
+				utils/free_all.c \
+				utils/exit.c \
+				utils/cpy.c \
 
 
 

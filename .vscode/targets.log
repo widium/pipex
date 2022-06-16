@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun 15 16:24:06 2022
+# Make data base, printed on Thu Jun 16 18:23:11 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/widium/.gtkrc:/home/widium/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-4ebfc3aa-345a-45c3-b516-3b2cda6921d4.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b663b545-6e17-4e84-8109-b055410cbc99.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -57,7 +57,7 @@ VSCODE_LOG_STACK = false
 # environment
 VSCODE_CODE_CACHE_PATH = /home/widium/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session2
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
 LANG = C
 # environment
@@ -75,7 +75,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # makefile (from 'Makefile', line 15)
-SRCS = get_next_line/get_next_line.c main.c src/init.c src/recover.c src/parsing.c src/command.c src/pipe.c src/redirection.c src/all.c src/file.c utils/verbose.c utils/utils.c utils/free_exit.c 
+SRCS = get_next_line/get_next_line.c main.c src/init.c src/recover.c src/parsing.c src/command.c src/pipe.c src/redirection.c src/all.c src/file.c utils/verbose.c utils/utils.c utils/free_all.c utils/exit.c utils/cpy.c 
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -103,15 +103,15 @@ CONDA_SHLVL = 0
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 47641
+VSCODE_PID = 3881
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# makefile (from 'Makefile', line 34)
+# makefile (from 'Makefile', line 36)
 FLAGS = -g3 
 # environment
-SESSION_MANAGER = local/manjaro:@/tmp/.ICE-unix/1501,unix/manjaro:/tmp/.ICE-unix/1501
+SESSION_MANAGER = local/manjaro:@/tmp/.ICE-unix/1510,unix/manjaro:/tmp/.ICE-unix/1510
 # automatic
 *F = $(notdir $*)
 # environment
@@ -124,7 +124,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
-# makefile (from 'Makefile', line 31)
+# makefile (from 'Makefile', line 33)
 OBJS = $(SRCS:.c=.o)
 # makefile
 SHELL = /bin/sh
@@ -140,9 +140,9 @@ MAKE = $(MAKE_COMMAND)
 PATH = /home/widium/.local/bin:/usr/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
 # default
 MAKEFILES := 
-# makefile (from 'Makefile', line 36)
+# makefile (from 'Makefile', line 38)
 LEAKS = -fsanitize=leak
-# makefile (from 'Makefile', line 35)
+# makefile (from 'Makefile', line 37)
 SANITIZE = -fsanitize=address
 # environment
 LC_MONETARY = fr_FR.UTF-8
@@ -187,7 +187,7 @@ XDG_VTNR = 1
 # makefile
 .DEFAULT_GOAL := pipex
 # environment
-SYSTEMD_EXEC_PID = 1368
+SYSTEMD_EXEC_PID = 1376
 # environment
 DISPLAY = :0
 # environment
@@ -240,7 +240,7 @@ ELECTRON_NO_ATTACH_CONSOLE = 1
 KDE_SESSION_VERSION = 5
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
-# makefile (from 'Makefile', line 32)
+# makefile (from 'Makefile', line 34)
 CC = clang
 # environment
 KDE_FULL_SESSION = true
@@ -249,7 +249,7 @@ CONDA_EXE = /usr/bin/conda
 # environment
 LC_IDENTIFICATION = fr_FR.UTF-8
 # variable set hash-table stats:
-# Load=119/1024=12%, Rehash=0, Collisions=11/159=7%
+# Load=119/1024=12%, Rehash=0, Collisions=11/164=7%
 
 # Pattern-specific Variable Values
 
@@ -257,93 +257,57 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 
 # Directories
 
-# get_next_line (device 66306, inode 5243011): 11 files, no impossibilities so far.
-# src (device 66306, inode 5242989): 18 files, no impossibilities so far.
-# utils (device 66306, inode 5243071): 7 files, no impossibilities so far.
-# . (device 66306, inode 5244610): 18 files, no impossibilities.
+# get_next_line (device 66306, inode 5243011): 10 files, no impossibilities so far.
+# . (device 66306, inode 5244610): 16 files, no impossibilities.
 
-# 54 files, no impossibilities in 4 directories.
+# 26 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 %.o: %.c
-#  recipe to execute (from 'Makefile', line 39):
+#  recipe to execute (from 'Makefile', line 41):
 			$(CC) -c $(FLAGS) $< -o $@
 	
 
 # 1 implicit rules, 0 (0.0%) terminal.
 # Files
 
-utils/free_exit.o: utils/free_exit.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'utils/free_exit'
-#  Last modified 2022-06-15 16:19:29.086660408
- 
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) -c $(FLAGS) $< -o $@
-	
-
-src/all.o: src/all.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/all'
-#  Last modified 2022-06-15 16:19:28.996660408
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) -c $(FLAGS) $< -o $@
-	
-
-src/command.o: src/command.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/command'
-#  Last modified 2022-06-15 16:19:28.929993741
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) -c $(FLAGS) $< -o $@
-	
-
 # Not a target:
-utils/utils.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-09 10:15:39.126672784
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-src/file.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-15 15:55:50.946659981
-#  File has been updated.
-#  Successfully updated.
-
-src/init.o: src/init.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/init'
-#  Last modified 2022-06-15 16:19:28.856660408
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) -c $(FLAGS) $< -o $@
-	
-
-utils/verbose.o: utils/verbose.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'utils/verbose'
-#  Last modified 2022-06-15 16:19:29.039993741
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) -c $(FLAGS) $< -o $@
-	
-
-debug: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_exit.o
+src/all.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 56):
+
+# Not a target:
+utils/exit.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/command.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/init.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+utils/verbose.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ 
+debug: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_all.o utils/exit.o utils/cpy.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 58):
 				$(CC) $(OBJS) $(FLAGS) $(SANITIZE) -g3 libft/libft.a  -o $(NAME)
 				gdb $(NAME)
 				
@@ -351,51 +315,41 @@ debug: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 15:57:18.323326674
+#  Last modified 2022-06-16 18:23:10.1133342
 #  File has been updated.
 #  Successfully updated.
 
-pipex: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_exit.o
+pipex: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_all.o utils/exit.o utils/cpy.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-15 16:19:29.849993741
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 42):
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  recipe to execute (from 'Makefile', line 44):
 				make -C libft
 				$(CC) $(OBJS) $(FLAGS) libft/libft.a -o $(NAME)		
-
-# Not a target:
-src/parsing.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-15 15:54:25.189993288
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-src/redirection.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-09 10:37:53.676673193
-#  File has been updated.
-#  Successfully updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 48):
+#  recipe to execute (from 'Makefile', line 50):
 				make clean -C libft
 				/bin/rm -rf $(OBJS)
 
-src/file.o: src/file.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/file'
-#  Last modified 2022-06-15 16:19:29.016660408
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) -c $(FLAGS) $< -o $@
-	
+# Not a target:
+utils/cpy.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/file.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -403,32 +357,39 @@ re: fclean all
 #  File does not exist.
 #  File has not been updated.
 
-src/recover.o: src/recover.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/recover'
-#  Last modified 2022-06-15 16:19:28.879993741
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) -c $(FLAGS) $< -o $@
-	
+# Not a target:
+src/recover.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 get_next_line/get_next_line.o: get_next_line/get_next_line.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'get_next_line/get_next_line'
-#  Last modified 2022-06-15 16:19:28.813327074
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
+#  Needs to be updated (-q is set).
+# automatic
+# @ := get_next_line/get_next_line.o
+# automatic
+# * := get_next_line/get_next_line
+# automatic
+# < := get_next_line/get_next_line.c
+# automatic
+# + := get_next_line/get_next_line.c
+# automatic
+# % := 
+# automatic
+# ^ := get_next_line/get_next_line.c
+# automatic
+# ? := get_next_line/get_next_line.c
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
+#  recipe to execute (from 'Makefile', line 41):
 			$(CC) -c $(FLAGS) $< -o $@
 	
-
-# Not a target:
-src/pipe.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-15 11:23:09.17666897
-#  File has been updated.
-#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -442,124 +403,69 @@ all: pipex
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 52):
+#  recipe to execute (from 'Makefile', line 54):
 				make fclean -C libft
 				/bin/rm -rf $(NAME)
 
 # Not a target:
-src/command.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-15 15:52:55.973326594
-#  File has been updated.
-#  Successfully updated.
+src/redirection.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Not a target:
-src/all.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-15 16:09:43.446660228
-#  File has been updated.
-#  Successfully updated.
-
-src/redirection.o: src/redirection.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/redirection'
-#  Last modified 2022-06-15 16:19:28.973327074
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) -c $(FLAGS) $< -o $@
-	
-
-# Not a target:
-main.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-14 17:35:55.393332516
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-utils/free_exit.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-15 16:18:13.833327052
-#  File has been updated.
-#  Successfully updated.
-
-leak: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_exit.o
+leak: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_all.o utils/exit.o utils/cpy.o
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 63):
+#  recipe to execute (from 'Makefile', line 65):
 				$(CC) $(OBJS) $(FLAGS) $(LEAKS) libft/libft.a  -o $(NAME)
 
-main.o: main.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-15 16:19:28.833327075
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) -c $(FLAGS) $< -o $@
-	
+# Not a target:
+main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-utils/verbose.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-09 10:37:04.743339844
-#  File has been updated.
-#  Successfully updated.
-
-src/pipe.o: src/pipe.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/pipe'
-#  Last modified 2022-06-15 16:19:28.949993741
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) -c $(FLAGS) $< -o $@
-	
+utils/free_all.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-src/recover.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-08 11:52:06.22333354
-#  File has been updated.
-#  Successfully updated.
+src/pipe.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-utils/utils.o: utils/utils.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'utils/utils'
-#  Last modified 2022-06-15 16:19:29.063327074
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) -c $(FLAGS) $< -o $@
-	
+# Not a target:
+utils/utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-src/parsing.o: src/parsing.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/parsing'
-#  Last modified 2022-06-15 16:19:28.903327074
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) -c $(FLAGS) $< -o $@
-	
+# Not a target:
+src/parsing.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-sanitize: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_exit.o
- 
+sanitize: get_next_line/get_next_line.o main.o src/init.o src/recover.o src/parsing.o src/command.o src/pipe.o src/redirection.o src/all.o src/file.o utils/verbose.o utils/utils.o utils/free_all.o utils/exit.o utils/cpy.o
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 60):
+#  recipe to execute (from 'Makefile', line 62):
 				$(CC) $(OBJS) $(FLAGS) $(SANITIZE) libft/libft.a  -o $(NAME)
 
 .PHONY: all clean fclean re leak sanitize
@@ -574,27 +480,20 @@ get_next_line/get_next_line.c:
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-src/init.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-15 15:59:50.016660051
-#  File has been updated.
-#  Successfully updated.
-
 # files hash-table stats:
-# Load=38/1024=4%, Rehash=0, Collisions=0/150=0%
+# Load=28/1024=3%, Rehash=0, Collisions=0/112=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 98 / storage = 1114 B / avg = 11 B
-# current buf: size = 8162 B / used = 1114 B / count = 98 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 55 / storage = 645 B / avg = 11 B
+# current buf: size = 8162 B / used = 645 B / count = 55 / avg = 11 B
 
-# strcache performance: lookups = 187 / hit rate = 47%
+# strcache performance: lookups = 129 / hit rate = 57%
 # hash-table stats:
-# Load=98/8192=1%, Rehash=0, Collisions=0/187=0%
-# Finished Make data base on Wed Jun 15 16:24:06 2022
+# Load=55/8192=1%, Rehash=0, Collisions=0/129=0%
+# Finished Make data base on Thu Jun 16 18:23:11 2022
 
  
