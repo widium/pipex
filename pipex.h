@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:56:56 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/16 18:38:31 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/16 19:26:29 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,9 +104,12 @@ void		command_redirection(t_env *env, t_command *cmd);
 void		close_all(t_env *env);
 
 int			terminal(char **argv, int argc, char **env_path, int verbose);
+
 void		error_exit(t_env *env, int index);
 void		malloc_exit(void);
+void		void_exit(t_env *env);
 void		parsing_exit(t_env *env);
+
 void		free_all(t_env *env);
 void		free_cmd(t_command *first_cmd);
 void		free_array(char **array);

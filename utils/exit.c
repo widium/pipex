@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:20:56 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/16 18:43:13 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/16 19:43:35 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,27 @@ void	error_exit(t_env *env, int index)
 void	parsing_exit(t_env *env)
 {
 	print_error();
-	free_all(env);
+	free_array(env->argv_cpy);
+	if (env->in_file->name)
+		free(env->in_file->name);
+	free(env->in_file);
+	if (env->out_file->name)
+		free(env->out_file->name);
+	free(env->out_file);
+	free_array(env->path->list_of_path);
+	free(env->path);
+	free(env);
+	exit(0);
+}
+
+void	void_exit(t_env *env)
+{
+	print_error();
+	free_array(env->argv_cpy);
+	free(env->in_file);
+	free(env->out_file);
+	free(env->path);
+	free(env);
 	exit(0);
 }
 

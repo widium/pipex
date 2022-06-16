@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:28:52 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/16 18:14:13 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/06/16 19:33:52 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	manage_parsing(t_env *env, char **argv, int argc, char **env_path)
 {
+	if (argc <= 4)
+		void_exit(env);
 	recover_path(env, env_path);
 	check_input(env, argv, argc);
 	create_chained_list(env, argv, argc);
@@ -53,8 +55,6 @@ int	check_input(t_env *env, char **argv, int argc)
 {
 	int	result;
 
-	if (argc <= 3)
-		parsing_exit(env);
 	result = detect_in_file_or_keyword(env, argv, argc);
 	detect_and_create_out_file(env, argv, argc);
 	if (result == 2)
