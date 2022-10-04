@@ -1,3 +1,17 @@
+# Pipex `echo salut | wc`
+-  [1. File Descriptor](#file-descriptor)
+-  [2. Process](#process)
+-  [3. Redirection](#redirection)
+-  [4. Pipe](#pipe)
+-  [5. PATH](#path)
+-  [6. Tester l'existance et les permissions des fichiers](#access)
+-  [7. Executer un binaire en C](#executer-un-binaire-en-c)
+-  [8. Pipex Simple](#pipex-simple)
+-  [9. Multi Pipex](#multi-pipex)
+	-  [1.Parsing Chained-list](#parsing-chained-list)
+	-  [2. Multi-Pipe mobile](#multi-pipe-mobile)
+- [10. Here_doc](#here_doc)
+***
 # File Descriptor
 ![](https://i.imgur.com/EAfRIKV.png)
 ![](https://i.imgur.com/B0yUwET.png)
@@ -9,11 +23,13 @@
 ![](https://i.imgur.com/eOfpd7t.png)
 ![](https://i.imgur.com/vZiCfpd.png)
 ***
-# Redirection et Pipe
-![](https://i.imgur.com/qYNcbVJ.png)
+# Redirection
 ![](https://i.imgur.com/P77jLAh.png)
 ***
-# Recupereration de tous les PATH
+# Pipe
+![](https://i.imgur.com/qYNcbVJ.png)
+***
+# PATH
 ~~~C
 int main(int argc, char **argv, char **env)
 {
@@ -28,7 +44,7 @@ PATH=/home/widium/.local/bin:/usr/condabin:/usr/local/sbin:/usr
 n
 ~~~
 ***
-# Access() command - Tester l'existance et les permissions des fichiers
+# Access
 - **Si le Fichier Exsite** : `F_OK`
 - **Les permissions du Fichier** : 
 	- `R_OK` pour la **lecture**
